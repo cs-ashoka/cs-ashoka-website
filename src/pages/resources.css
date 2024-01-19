@@ -1,0 +1,15 @@
+.background-text {
+    color: #D80032;
+    position: absolute;
+    width: 80vw;
+    height: 50vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 100;
+}
+
+.resources {
+    width: 100vw;
+    height: 86.5vh;
+}
