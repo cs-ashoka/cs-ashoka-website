@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+
+.internships-info {
+    width: 100vw;
+    height: 100%;
+    background-color: #333533;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.internships_info_title {
+    color: #D80032;
+    font-size: 48px;
+
+    font-family: 'Bayon', sans-serif;
+    letter-spacing: 2px;
+}
+
+.internships-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+.internships-card {
+    width: 40vw;
+    height: 120px;
+    border-radius: 15px;
+    background-color: #D6D6D6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    margin:5px 0 5px 0;
+    padding: 0;
+}
+
+.card-info {
+    position: absolute;
+    z-index: 10;
+    min-width: 400px;
+    max-width: 700px;
+    background-color: #f0ebeb;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px 2px 4px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

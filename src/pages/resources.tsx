@@ -28,8 +28,9 @@ export default function Resources() {
     const [scrollOpacity, setScrollOpacity] = useState(1);
 
     function handleWindowSizeChange() {
-        setIsMobile(window.innerWidth <= 800);
+        setIsMobile(window.innerWidth <= 500);
       }
+      
       useEffect(() => {
         handleWindowSizeChange();
         window.addEventListener('resize', handleWindowSizeChange);
@@ -37,6 +38,10 @@ export default function Resources() {
           window.removeEventListener('resize', handleWindowSizeChange);
         };
       }, []);
+
+      useEffect(()=> {
+        handleWindowSizeChange();
+      }, [])
 
 
       useEffect(() => {
@@ -53,7 +58,8 @@ export default function Resources() {
         };
       }, []);
 
-    return (
+    if (!isMobile) {
+      return (
         <div className="resources">
             <div className="background-text" style={{ opacity: scrollOpacity }}>
                 RESOURCES
@@ -61,7 +67,7 @@ export default function Resources() {
             <main className="resources-main-content">
             <div className="resources-header">
               <p className="red-text">What resources does CS Soc have for you?</p>
-              <img className="magnifier" src={mag.src}></img>
+              <Image className="magnifier" src={mag} alt="Magnifier"/>
             </div>
             <div className="resources-buttons">
               <Button name={"CS Helpdesk"} link={"/helpdesk"}/>
@@ -70,4 +76,21 @@ export default function Resources() {
             </main>
         </div>
     )
+    } else {
+      return (
+        <div className="resources">
+          <div className="background-text-m">
+            RESOURCES
+          </div>
+          <main className="resources-main-content">
+            <div className="resources-header">
+              <p className="red-text">What resources does CS Soc have for you?</p>
+              <Image className="magnifier" src={mag} alt="Magnifier"></Image>
+            </div>
+            <Button name={"CS Helpdesk"} link={"/helpdesk"}/>
+            <Button name={"Internships"} link={"/internships_info"}/>
+          </main>
+        </div>
+      )
+    }
 }
