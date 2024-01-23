@@ -31,3 +31,8 @@
 .text-shadow-hover:hover {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
+
+.vertical-text {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
