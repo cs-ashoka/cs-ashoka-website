@@ -7,8 +7,8 @@ export default function about(){
     return (
         <>
         <main className={`flex w-full overflow-hidden`}>
-            <div className="-z-10 bottom-0 absolute w-full h-full overflow-hidden">
-                <span className="block w-full h-full relative overflow-hidden">
+            <div className={`-z-10 bottom-0 absolute w-full h-full overflow-hidden`}>
+                <span className={`block w-full h-full relative overflow-hidden`}>
                     <Image
                         src={Background}
                         priority
