@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../app/globals.css";
 import { poppins } from "@/utils/fonts";
 import { Navbar } from "../components/navbar/Navbar";
 

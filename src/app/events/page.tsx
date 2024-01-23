@@ -2,11 +2,13 @@
 import React from 'react';
 import { bayon } from "@/utils/fonts";
 import Image from "next/image";
-import HeroImage from "../../../public/img/hero.png";
+import HeroImage from "../../../public/img/aboutbg.png";
 import Countdown from "../../components/countdown/counter";
 import EventCard from '@/components/cards/event-card';
+import { getSortedPostsData } from '@/lib/event-posts';
 
 const EventsPage = () => {
+  const eventPosts = getSortedPostsData();
   return (
     <main className={`w-full h-fit max-md:mt-[4vh] overflow-x-hidden`}>
       <div className="-z-10 bottom-0 absolute w-full h-[86.5vh] overflow-hidden">
@@ -38,8 +40,9 @@ const EventsPage = () => {
         </p>
       </div>
       <div className={`mx-auto w-4/5 grid grid-cols-2 md:grid-cols-5 mt-4 gap-8`}>
-        <EventCard imgSrc='' name='Event Name' link=''/>
-        <EventCard imgSrc='' name='Event Name' link=''/>
+        {eventPosts.map(event => (
+          <EventCard key={event.slug} imgSrc={`/img/events/${event.slug}.png`} name={event.title} link={`/events/${event.slug}`}/>
+        ))}
         <EventCard imgSrc='' name='Event Name' link=''/>
         <EventCard imgSrc='' name='Event Name' link=''/>
         <EventCard imgSrc='' name='Event Name' link=''/>

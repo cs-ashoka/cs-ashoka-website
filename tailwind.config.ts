@@ -11,12 +11,9 @@ const config: Config = {
       colors: {
         primary: '#D80032',
         secondary: '#1263C7',
-<<<<<<< HEAD
-=======
         tertiary: '#D6D6D6',
         box: "#333533",
         gray: "#333533",
->>>>>>> main
         text: '#ffffff',
         background: '#202020',
         transparent: 'transparent',
