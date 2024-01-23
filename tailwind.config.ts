@@ -12,7 +12,6 @@ const config: Config = {
         primary: '#D80032',
         secondary: '#1263C7',
 <<<<<<< HEAD
-        gray: '#333533',
 =======
         tertiary: '#D6D6D6',
         box: "#333533",
