@@ -34,12 +34,12 @@ const EventsPage = () => {
         </div>
         <Countdown />
       </div>
-      <div className={`w-full max-md:text-center md:ml-32 mt-8`}>
+      <div className={`w-full ml-10 md:ml-32 mt-20 md:mt-8`}>
         <p className={`${bayon.className} text-primary text-4xl`}>
             RECENT EVENTS:
         </p>
       </div>
-      <div className={`mx-auto w-4/5 grid grid-cols-2 md:grid-cols-5 mt-4 gap-8`}>
+      <div className={`mx-auto w-5/6 md:w-4/5 grid grid-cols-2 mb-10 md:mb-0 md:grid-cols-5 mt-4 gap-8`}>
         {eventPosts.map(event => (
           <EventCard key={event.slug} imgSrc={`/img/events/${event.slug}.png`} name={event.title} link={`/events/${event.slug}`}/>
         ))}

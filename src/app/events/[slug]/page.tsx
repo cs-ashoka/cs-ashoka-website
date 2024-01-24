@@ -7,33 +7,33 @@ import { getSortedPostsData } from "@/lib/event-posts";
 import { getPostData } from "@/lib/event-posts";
 import NotFound from "@/app/not-found";
 
-export function generateStaticParams() {
-    const eventPosts = getSortedPostsData()
+// export function generateStaticParams() {
+//     const eventPosts = getSortedPostsData()
 
-    return eventPosts.map((event) => ({
-        eventSlug: event.slug
-    }))
-}
+//     return eventPosts.map((event) => ({
+//         eventSlug: event.slug
+//     }))
+// }
 
-export function generateMetadata({ params }: { params: { eventSlug: string } }) {
+// export function generateMetadata({ params }: { params: { eventSlug: string } }) {
     
-    const eventPosts = getSortedPostsData()
-    const { eventSlug } = params
+//     const eventPosts = getSortedPostsData()
+//     const { eventSlug } = params
 
-    const eventPost = eventPosts.find(event => event.slug === eventSlug)
+//     const eventPost = eventPosts.find(event => event.slug === eventSlug)
 
-    if (!eventPost) {
-        return {
-            title: 'Post Not Found',
-            date: '--/--/----'
-        }
-    }
+//     if (!eventPost) {
+//         return {
+//             title: 'Post Not Found',
+//             date: '--/--/----'
+//         }
+//     }
 
-    return {
-        title: eventPost.title,
-        date: eventPost.date,
-    }
-}
+//     return {
+//         title: eventPost.title,
+//         date: eventPost.date,
+//     }
+// }
 
 export default async function EventsPost( { params }: { params: {slug: string } }) {
 
