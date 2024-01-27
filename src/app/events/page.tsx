@@ -45,7 +45,6 @@ const EventsPage = () => {
         ))}
         <EventCard imgSrc='' name='Event Name' link=''/>
         <EventCard imgSrc='' name='Event Name' link=''/>
-        <EventCard imgSrc='' name='Event Name' link=''/>
       </div>
     </main>
   );
