@@ -12,15 +12,15 @@ interface rightMember {
 const RightMember: React.FC<rightMember> = ({ imgr, personr, batchr }) => {
     return (
         <div>
-            <div className={`opacity-35`}>
+            <div className={`opacity-[.35]`}>
                 <Image src={imgr} 
                 alt='Member image'
-                className={`object-contain h-[230px] md:h-[280px] ml-8 md:ml-28 mt-4`} />
+                className={`object-cover mt-2 w-[137px] md:w-[195px] h-[200px] md:h-[285px] ml-36`} />
             </div>
-            <div className={`${poppins.className} absolute text-primary font-bold text-[13px] md:text-2xl absolute -mt-9 md:-mt-12 ml-12`}style={{color: '#D6D6D6'}}>
+            <div className={`${poppins.className} absolute text-primary font-bold text-[15px] md:text-2xl bg-background -mt-[36px] md:-mt-[59px] ml-24`}style={{color: '#D6D6D6'}}>
                 {personr}
             </div>
-            <div className={`${poppins.className} absolute text-primary font-bold text-[13px] md:text-2xl -mt-6 ml-12 absolute`}>
+            <div className={`${poppins.className} text-primary font-bold text-[15px] md:text-2xl -mt-[21px] md:-mt-[36px] ml-24 absolute`}>
                 {batchr}
             </div>
         </div>
