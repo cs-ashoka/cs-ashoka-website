@@ -15,7 +15,7 @@ import RightMember from "@/components/team/right";
 export default function Events(){
   return (
       <main>
-          <p className={`${bayon.className} text-primary text-8xl md:text-7xl font-bold text-shadow text-center`}>
+          <p className={`${bayon.className} text-primary text-6xl md:text-7xl font-bold text-shadow text-center`}>
               EVENTS
           </p>
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-0 mx-auto`}>
