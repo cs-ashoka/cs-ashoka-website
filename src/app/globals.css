@@ -13,6 +13,12 @@
   transform: translateX(-50%);
 }
 
+@layer base {
+  .ul {
+    list-style: circle;
+  }
+}
+
 @layer components {
   .background {
     @apply -z-10 bottom-0 absolute w-full h-[86.5vh] overflow-hidden;

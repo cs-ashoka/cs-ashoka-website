@@ -5,7 +5,9 @@ import Image from "next/image";
 import HeroImage from "../../../../public/img/aboutbg.png";
 import { getSortedPostsData } from "@/lib/event-posts";
 import { getPostData } from "@/lib/event-posts";
+import { GalleryWithCarousel } from "@/components/carousel/carousel";
 import NotFound from "@/app/not-found";
+import { imageOptimizer } from "next/dist/server/image-optimizer";
 
 // export function generateStaticParams() {
 //     const eventPosts = getSortedPostsData()
@@ -75,6 +77,8 @@ export default async function EventsPost( { params }: { params: {slug: string } 
             <div className={`bg-white py-5 px-10 rounded-2xl max-md:text-center mt-8`}>
                 <section className={`${poppins.className} text-black md:text-4md text-justify`} dangerouslySetInnerHTML={{ __html: contentHtml }} />
             </div>
+            <br></br>
+            <GalleryWithCarousel />
         </div>
       </main>
     );
