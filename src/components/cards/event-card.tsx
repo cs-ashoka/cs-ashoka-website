@@ -13,6 +13,7 @@ const imageStyle = {
     width: '100%',
     maxHeight: '110px',
     margin: 'auto',
+    borderRadius: '8px',
 }
 
 const EventCard: React.FC<eventCardDetails> = ({ imgSrc, name, link}) => {
