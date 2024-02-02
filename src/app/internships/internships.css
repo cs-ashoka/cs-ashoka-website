@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+.internships {
+    width: 100%;
+    height: 100vh;
+    padding-top: 40px;
+    padding-left: 80px;
+    background: linear-gradient(20deg, #D80032 50%, rgb(51, 53, 51) 50%);
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 85px;
+}
+
+.internships-title {
+    font-size: 76px;
+    color: white;
+    float: right;
+    font-family: 'Bayon', sans-serif;
+    letter-spacing: 5px;
+    margin-right: 50px;
+    padding: 0;
+    margin: 0 50px 0 0;
+}
+
+.interships-decorations-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.internships-img {
+    width: 400px;
+    height: 400px;
+}
+.internships-button {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: #1263C7;
+        color: #fff; 
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
+        transition: box-shadow 0.3s ease;
+        width: 150px;
+        margin-right: 60px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+}
+
+.internships-button:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.link {
+    text-decoration: none;
+}

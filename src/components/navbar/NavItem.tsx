@@ -3,6 +3,8 @@
 import cn from "@/utils/cn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import path from "path";
+import { useEffect } from "react";
 
 export function NavItem({
   href,
@@ -14,6 +16,28 @@ export function NavItem({
   const pathname = usePathname();
 
   const match = pathname === href;
+
+  function changeBGColor(color: string) {
+    const element = document.querySelector<HTMLElement>(".background-div");
+    if (element) {
+      element.style.backgroundColor = color;
+    }
+
+  }
+  
+
+  // needed to change bg color. no other place that is anyways accessing pathname
+  useEffect(()=> {
+    if (pathname === "/resources") {
+      console.log("correct page")
+      changeBGColor("#d6d6d6");
+    } else if (pathname === "/internships/internships_info") {
+      changeBGColor("#333533");
+    } 
+    else {
+      changeBGColor("rgb(32 32 32 / var(--tw-bg-opacity))");
+    }
+  }, [pathname])
 
   return (
     <li

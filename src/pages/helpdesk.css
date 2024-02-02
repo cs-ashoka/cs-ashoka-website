@@ -1,0 +1,14 @@
+.helpdesk {
+    width: 100%;
+    height: 100vh;
+    padding-top: 40px;
+    padding-left: 80px;
+    background: linear-gradient(20deg, #D80032 50%, rgb(51, 53, 51) 50%);
+    box-sizing: border-box;
+}
+.helpdesk-title {
+    font-family: bayon;
+    font-size: 70px;
+    position: relative;
+    color: white;
+}
