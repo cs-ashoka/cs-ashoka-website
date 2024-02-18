@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`h-full`}>
-      <body className={`${poppins.className} bg-background h-full`}>
+      <body className={`${poppins.className} bg-background h-full background-div`}>
         {/* <div className={`text-text px-4 sm:px-8 md:px-12 lg:px-16`}> */}
         <div className={`text-text h-full w-full`}>
           <Navbar />
