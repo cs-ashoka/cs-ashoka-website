@@ -2,11 +2,13 @@
 import React from 'react';
 import { bayon } from "@/utils/fonts";
 import Image from "next/image";
-import HeroImage from "../../../public/img/hero.png";
+import HeroImage from "../../../public/img/aboutbg.png";
 import Countdown from "../../components/countdown/counter";
 import EventCard from '@/components/cards/event-card';
+import { getSortedPostsData } from '@/lib/event-posts';
 
 const EventsPage = () => {
+  const eventPosts = getSortedPostsData();
   return (
     <main className={`w-full h-fit max-md:mt-[4vh] overflow-x-hidden`}>
       <div className="-z-10 bottom-0 absolute w-full h-[86.5vh] overflow-hidden">
@@ -32,15 +34,15 @@ const EventsPage = () => {
         </div>
         <Countdown />
       </div>
-      <div className={`w-full max-md:text-center md:ml-32 mt-8`}>
+      <div className={`w-full ml-10 md:ml-32 mt-20 md:mt-8`}>
         <p className={`${bayon.className} text-primary text-4xl`}>
             RECENT EVENTS:
         </p>
       </div>
-      <div className={`mx-auto w-4/5 grid grid-cols-2 md:grid-cols-5 mt-4 gap-8`}>
-        <EventCard imgSrc='' name='Event Name' link=''/>
-        <EventCard imgSrc='' name='Event Name' link=''/>
-        <EventCard imgSrc='' name='Event Name' link=''/>
+      <div className={`mx-auto w-5/6 md:w-4/5 grid grid-cols-2 mb-10 md:mb-0 md:grid-cols-5 mt-4 gap-8`}>
+        {eventPosts.map(event => (
+          <EventCard key={event.slug} imgSrc={`/img/events/${event.slug}.png`} name={event.title} link={`/events/${event.slug}`}/>
+        ))}
         <EventCard imgSrc='' name='Event Name' link=''/>
         <EventCard imgSrc='' name='Event Name' link=''/>
       </div>
