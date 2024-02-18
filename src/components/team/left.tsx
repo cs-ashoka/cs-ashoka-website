@@ -11,15 +11,15 @@ interface leftMember {
 const LeftMember: React.FC<leftMember> = ({ imgl, personl, batchl }) => {
     return (
         <div>
-            <div className={`opacity-35`}>
+            <div className={`opacity-[.35] `}>
                 <Image src={imgl} 
                 alt="Member photo"
-                className="object-contain w-full h-[230px] md:h-[290px] ml-2 md:-ml-12"/>
+                className="object-cover mt-2 w-[137px] md:w-[195px] h-[200px] md:h-[285px] ml-4"/>
             </div>
-            <div className={`${poppins.className} text-primary font-bold text-[13px] md:text-2xl ml-28 -mt-14 md:-mt-24`}style={{color: '#D6D6D6'}}>
+            <div className={`${poppins.className} text-primary font-bold text-[15px] bg-background md:text-2xl ml-[120px] -mt-[70px] md:-mt-24 absolute`}style={{color: '#D6D6D6'}}>
                 {personl}
             </div>
-            <div className={`${poppins.className} text-primary font-bold text-[13px] md:text-2xl ml-28 -mt-2 absolute`}>
+            <div className={`${poppins.className} text-primary font-bold text-[15px] md:text-2xl ml-[120px] md:-mt-[70px] -mt-[55px] absolute`}>
                 {batchl}
         </div>
         </div>
