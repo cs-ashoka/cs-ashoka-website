@@ -51,7 +51,7 @@ const Queries: React.FC = () => {
         External Reach: Interact with other CS communities nationwide. Gain valuable industry insights through interactions with professionals in the field. <br />
             </p>}/>} className="md:w-3/5"/>
       <ToExpand title={<Question ques="When will inductions for the Computer Science Society open?"/>} content={<Answer ans={
-        <p>We&apos;re glad you&apos;re interested in joining us. <br/> Inductions for our <span className="font-bold"> Dev Vertical </span> open <span className="italic">soon! </span> More details are in your Ashoka inbox.</p>}/>} className="md:w-3/5" /></Client>
+        <p>We&apos;re glad you&apos;re interested in joining us. <br/> Inductions for our verticals, namely <span className="font-bold"> Events, Marketing, Outreach & Logistics, Dev, and Finance </span> will open in <span className="italic">Monsoon 2024! </span> More details will be sent to your Ashoka inbox closer to the inductions cycle.</p>}/>} className="md:w-3/5" /></Client>
     </div>
     </HydrationProvider>
   );

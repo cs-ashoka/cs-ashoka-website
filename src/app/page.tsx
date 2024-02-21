@@ -1,7 +1,10 @@
+"use client"
 import { bayon } from "@/utils/fonts";
 import { poppins } from "@/utils/fonts";
 import Image from "next/image";
 import HeroImage from "../../public/img/hero.png";
+import TypeWriter from 'react-ts-typewriter';
+
 
 export default function Home() {
   return (
@@ -23,15 +26,15 @@ export default function Home() {
         <p
           className={`${bayon.className} text-primary text-7xl md:text-8xl font-bold text-shadow mb-0`}
         >
-          CS SOCIETY
+        <TypeWriter text="CS SOCIETY" loop={false} speed={200} cursor={true}/>
         </p>
         <p
-        style={{ color: '#D6D6D6' }} className={`${poppins.className} text-xl mr-[10px] text-right -mb-2 -mt-2 mr-3`} 
+        style={{ color: '#D6D6D6' }} className={`${poppins.className} absolute -mt-3 md:ml-72 ml-48 text-xl text-right`} 
         >
         At Ashoka
         </p>
         <p
-          className={`mt-[0px] my-2 mb-[3px] px-6 rounded-full font-extralight bg-secondary w-max drop-shadow-[2px_3px_3px_rgba(0,0,0,0.3)]`}
+          className={`mt-4 my-2 mb-[3px] px-6 rounded-full font-extralight bg-secondary w-max drop-shadow-[2px_3px_3px_rgba(0,0,0,0.3)]`}
         >
           Read More
         </p>

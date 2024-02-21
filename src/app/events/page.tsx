@@ -29,7 +29,7 @@ const EventsPage = () => {
             <p
             className={`${bayon.className} text-white text-5xl md:text-7xl font-bold text-center`}
             >
-            GITHUB WORKSHOP IN:
+            PYTHON WORKSHOP IN:
             </p>
         </div>
         <Countdown />
@@ -43,8 +43,6 @@ const EventsPage = () => {
         {eventPosts.map(event => (
           <EventCard key={event.slug} imgSrc={`/img/events/${event.slug}.png`} name={event.title} link={`/events/${event.slug}`}/>
         ))}
-        <EventCard imgSrc='' name='Event Name' link=''/>
-        <EventCard imgSrc='' name='Event Name' link=''/>
       </div>
     </main>
   );

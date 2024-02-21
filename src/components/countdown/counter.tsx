@@ -21,7 +21,7 @@ const CountdownCard: React.FC<CountdownProps> = ({ label, value }) => {
 
 const Countdown: React.FC = () => {
   const calculateTimeLeft = () => {
-    const targetDate = '2024-02-01T12:00:00';
+    const targetDate = '2024-02-20T19:00:00';
     const now = new Date().getTime();
     const targetTime = new Date(targetDate).getTime();
     const timeDifference = targetTime - now;

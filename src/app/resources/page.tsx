@@ -93,7 +93,7 @@ export default function Resources() {
               <Image className="magnifier" src={mag} alt="Magnifier"/>
             </div>
             <div className="resources-buttons">
-              <Button name={"CS Helpdesk"} link={"/helpdesk"} isMobile={isMobile}/>
+              <Button name={"Learning CS"} link={"/learningcs"} isMobile={isMobile}/>
               <Button name={"Internships"} link={"/internships"} isMobile={isMobile}/>
             </div>
             </main>
@@ -110,7 +110,7 @@ export default function Resources() {
               <p className="red-text">What resources does CS Soc have for you?</p>
               <Image className="magnifier" src={mag} alt="Magnifier"></Image>
             </div>
-            <Button name={"Helpdesk"} link={"/helpdesk"} isMobile={isMobile}/>
+            <Button name={"Learning CS"} link={"/learningcs"} isMobile={isMobile}/>
             <Button name={"Internships"} link={"/internships/internships_info"} isMobile={isMobile}/>
           </main>
         </div>
