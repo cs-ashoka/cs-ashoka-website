@@ -1,7 +1,8 @@
 "use client"
 import { HomeNavItem, NavItem } from "./NavItem";
 import React, { useState, useEffect, useRef, use } from "react";
-import OpenMenu from "./openmenu";
+import { poppins } from "@/utils/fonts";
+import { IoClose } from 'react-icons/io5';
 
 const Hamburger: React.FC = () => {
   return(
@@ -13,10 +14,8 @@ const Hamburger: React.FC = () => {
   )
 }
 
-
 export function Navbar(){
   const [open, setOpen] = useState(false);
-
   let menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,11 +25,37 @@ export function Navbar(){
       }
     }
     document.addEventListener("mousedown", handleClick);
-  });
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setOpen(!open)
   }; 
+
+const OpenMenu: React.FC = () => {
+  const CloseMenu: React.FC = () => {
+      return(
+      <IoClose className="absolute right-5 top-5 cursor-pointer" size={28} />
+      )
+  }
+  return(
+      <div className="z-50 flex items-end justify-end bg-opacity-50">
+      <div className="absolute top-0 right-0 w-1/2 bg-secondary transition-transform ease-in-out h-full"> 
+      <div className={`${poppins.className} m-4`}>
+      <button onClick={toggleMenu}> <CloseMenu /> </button>
+          <ul>
+          <NavItem href="/about" onClick={toggleMenu}>About</NavItem>
+          <NavItem href="/events" onClick={toggleMenu}>Events</NavItem>
+          <NavItem href="/resources" onClick={toggleMenu}>Resources</NavItem>
+          <NavItem href="/manifesto" onClick={toggleMenu}>Our Manifesto</NavItem>
+          </ul>
+      </div>
+      </div>
+      </div>
+  );
+}; 
 
   return(
     <>

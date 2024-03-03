@@ -11,7 +11,7 @@ interface leftMember {
 const LeftMember: React.FC<leftMember> = ({ imgl, personl, batchl }) => {
     return (
         <div>
-            <div className={`opacity-[.35] `}>
+            <div className={`opacity-[.35] px-2`}>
                 <Image src={imgl} 
                 alt="Member photo"
                 className="object-cover mt-2 w-[137px] md:w-[195px] h-[200px] md:h-[285px] ml-4"/>

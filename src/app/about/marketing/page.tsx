@@ -10,6 +10,7 @@ import hrishita from "../../../../public/team/hrishitaghosh.jpg";
 import sanjanashenai from "../../../../public/team/sanjanashenai.jpeg";
 import LeftMember from "@/components/team/left";
 import RightMember from "@/components/team/right";
+import LeftMemberForMobile from "@/components/team/ismobile";
 
 export default function Marketing(){
   return (
@@ -41,11 +42,11 @@ export default function Marketing(){
               <div className={`place-items-start col-span-4 grid grid-rows-7 gap-6`}>
               <LeftMember imgl={adityadogra} personl = "Aditya Dogra" batchl = "UG 25" />
                   <RightMember imgr={anaghabhavsar} personr = "Anagha Bhavsar" batchr = "UG 25" />
-                  <LeftMember imgl={anamahmed} personl = "Anam Ahmed" batchl = "UG 27" />
+                  <LeftMemberForMobile imgl={anamahmed} personl = "Anam Ahmed" batchl = "UG 27" />
                   <RightMember imgr={aryikamehrotra} personr = "Aryika Mehrotra" batchr = "UG 24" /> 
-                  <LeftMember imgl={eeshajaswami} personl = "Eeshaja Swami" batchl = "UG 27" />
+                  <LeftMemberForMobile imgl={eeshajaswami} personl = "Eeshaja Swami" batchl = "UG 27" />
                   <RightMember imgr={hrishita} personr = "Hrishita Ghosh" batchr = "UG 25" /> 
-                  <LeftMember imgl={sanjanashenai} personl = "Sanjana Shenai" batchl = "UG 27" />
+                  <LeftMemberForMobile imgl={sanjanashenai} personl = "Sanjana Shenai" batchl = "UG 27" />
               </div>
             </div>
             </div>

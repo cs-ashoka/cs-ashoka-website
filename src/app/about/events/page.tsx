@@ -11,6 +11,7 @@ import tanmayjalan from "../../../../public/team/tanmayjalan.jpg";
 import zivbaretto from "../../../../public/team/zivbaretto.jpeg";
 import LeftMember from "@/components/team/left";
 import RightMember from "@/components/team/right";
+import LeftMemberForMobile from "@/components/team/ismobile";
 
 export default function Events(){
   return (
@@ -41,13 +42,13 @@ export default function Events(){
               <div className={`place-items-start col-span-4 grid grid-rows-10 gap-6`}>
                   <LeftMember imgl={ayushkishor} personl = "Ayush Kishor" batchl = "UG 25" />
                   <RightMember imgr={karnavpopat} personr = "Karnav Popat" batchr = "UG 24" /> 
-                  <LeftMember imgl={maaherbhagwagar} personl = "Maaher Bhagwagar" batchl = "UG 27" />
+                  <LeftMemberForMobile imgl={maaherbhagwagar} personl = "Maaher Bhagwagar" batchl = "UG 27" />
                   <RightMember imgr={manyagarg} personr = "Manya Garg" batchr = "UG 25" /> 
-                  <LeftMember imgl={mihiraggarwal} personl = "Mihir Aggarwal" batchl = "UG 25" />
+                  <LeftMemberForMobile imgl={mihiraggarwal} personl = "Mihir Aggarwal" batchl = "UG 25" />
                   <RightMember imgr={shivanshverma} personr = "Shivansh Verma" batchr = "UG 27" /> 
-                  <LeftMember imgl={suyogjoshi} personl = "Suyog Joshi" batchl = "UG 24" />
+                  <LeftMemberForMobile imgl={suyogjoshi} personl = "Suyog Joshi" batchl = "UG 24" />
                   <RightMember imgr={tanmayjalan} personr = "Tanmay Jalan" batchr = "UG 25" /> 
-                  <LeftMember imgl={zivbaretto} personl = "Ziv Baretto" batchl = "UG 25" />
+                  <LeftMemberForMobile imgl={zivbaretto} personl = "Ziv Baretto" batchl = "UG 25" />
               </div>
             </div>
             </div>

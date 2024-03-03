@@ -7,6 +7,7 @@ import shraddhakrishnaswami from "../../../../public/team/shraddhakrishnaswami.p
 import umangchauhan from "../../../../public/team/umangchauhan.png";
 import LeftMember from "@/components/team/left";
 import RightMember from "@/components/team/right";
+import LeftMemberForMobile from "@/components/team/ismobile";
 
 
 export default function Finance(){
@@ -38,9 +39,9 @@ export default function Finance(){
               <div className={`place-items-start col-span-4 grid grid-rows-10 gap-6`}>
                   <LeftMember imgl={anuravsingh} personl = "Anurav Singh" batchl = "UG 25" />
                   <RightMember imgr={arnavgoyal} personr = "Arnav Goyal" batchr = "UG 27" /> 
-                  <LeftMember imgl={fiona} personl = "Fiona Arora" batchl = "UG 24" />
+                  <LeftMemberForMobile imgl={fiona} personl = "Fiona Arora" batchl = "UG 24" />
                   <RightMember imgr={shraddhakrishnaswami} personr = "Shraddha Krishnaswami" batchr = "UG 27" /> 
-                  <LeftMember imgl={umangchauhan} personl = "Umang Chauhan" batchl = "UG 27" />
+                  <LeftMemberForMobile imgl={umangchauhan} personl = "Umang Chauhan" batchl = "UG 27" />
               </div>
             </div>
             </div>

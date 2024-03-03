@@ -7,9 +7,11 @@ import { usePathname } from "next/navigation";
 export function NavItem({
   href,
   children,
+  onClick,
 }: {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void; 
 }) {
   const pathname = usePathname();
   const match = pathname === href;
@@ -17,9 +19,10 @@ export function NavItem({
   return (
     <li
       className={cn(
-        `hover:text-primary font-extralight mt-2 md:mt-0 text-shadow-hover transition-all duration-150 text-center text-base sm:text-[17px] lg:text-lg`,
+        `hover:text-primary mb-4 md:mb-0 font-extralight mt-2 md:mt-0 text-shadow-hover transition-all duration-150 text-center text-base sm:text-[17px] lg:text-lg`,
         match && `text-primary font-medium mt-2 md:mt-0`
       )}
+      onClick={onClick}
     >
       <Link href={href}>{children}</Link>
     </li>

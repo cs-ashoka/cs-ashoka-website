@@ -2,7 +2,6 @@ import Image from "next/image";
 import { bayon } from "@/utils/fonts";
 import Background from "../../../public/img/aboutbg.png";
 import React from 'react';
-import Manifesto from "../../../public/manifesto.pdf";
 
 export default function manifesto(){
     return(
@@ -27,7 +26,7 @@ export default function manifesto(){
                 </p>
             </div> 
             <div className="flex items-center justify-center text-3xl underline text-primary">
-                <a href="https://drive.google.com/file/d/1Vi3GYfJEE11jW4DODKaEPGNBVTSumehV/view?usp=sharing">Download Manifesto</a>
+            <iframe src="/manifesto.pdf" className="h-[60vh] w-[100vh] rounded-lg object-cover object-center p-4"/>
             </div>
         </main>
     </>

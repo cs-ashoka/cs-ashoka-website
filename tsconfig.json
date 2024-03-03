@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "*.pdf"],
+  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "*.pdf", "src/app/learningcs/resources_info.js", "src/app/learningcs/search/page.js"],
   "exclude": ["node_modules"]
 }

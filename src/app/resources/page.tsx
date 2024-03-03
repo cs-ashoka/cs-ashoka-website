@@ -89,7 +89,7 @@ export default function Resources() {
             </div>
             <main className="resources-main-content">
             <div className="resources-header">
-              <p className="red-text">What resources does CS Soc have for you?</p>
+              <p className="red-text">What resources does the Computer Science Society have for you?</p>
               <Image className="magnifier" src={mag} alt="Magnifier"/>
             </div>
             <div className="resources-buttons">

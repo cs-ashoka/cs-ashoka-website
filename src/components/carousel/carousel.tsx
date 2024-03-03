@@ -4,78 +4,78 @@ import { ThemeProvider, Carousel } from "@material-tailwind/react";
 
 export function MasonryGridGallery() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4">
-      <div className="grid">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="grid gap-4">
         <div>
-          <iframe
-            className="h-[280px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/1xJ_z27s62Pus1WO1Qge-lADef55Nh_LE/preview"
+          <img
+            className="h-[280px] w-[300px] rounded-lg object-cover object-center  md:hover:object-cover hover:object-contain"
+            src="/img/events/notion_4.jpeg"
           />
         </div>
         <div>
-          <iframe
-            className="h-[480px] max-w-full rounded-lg object-cover object-center "
-            src="https://drive.google.com/file/d/11ikA820gyWaUve90icx31QUPoFKhGJDn/preview"
+        <img
+            className="h-[480px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/gather_2.png"
           />
         </div>
         <div>
-          <iframe
-            className="h-[280px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/1BMgxpGTZ8jC-TUrNFnWOz78cEvhhNVAM/preview"
+        <img
+            className="h-[280px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/acadsocsfair_3.jpg"
           />
         </div>
       </div>
       <div className="grid gap-4">
         <div>
-          <iframe
-            className="h-[480px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/1aewBupJfP4FuGD3kE-BJU0IFSRUAz_aV/preview"
+        <img
+            className="h-[480px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/aoc_14.jpg"
           />
         </div>
         <div>
-          <iframe
-            className="h-[280px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/13ujT5jIt5IZEu23iVaVeXjHXC4eAPCiv/preview"
+        <img
+            className="h-[280px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/blockchain_2.jpg"
           />
         </div>
         <div>
-          <iframe
-            className="h-[280px] max-w-full rounded-lg object-cover object-center "
-            src="https://drive.google.com/file/d/1q9sGjbjVL47_FprcCJxrRbW4y3d0Bt73/preview"
+        <img
+            className="h-[280px] w-[300px] rounded-lg object-center object-contain md:object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/blockchain_1.jpg"
           />
         </div>
       </div>
       <div className="grid gap-4">
         <div>
-          <iframe
-            className="h-[280px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/1PYgxJhvVCs59IeEQpHfiHMwYmDxsUEVv/preview"
+        <img
+            className="h-[280px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/acadsocsfair_2.jpg"
           />
         </div>
         <div>
-          <iframe
-            className="h-[280px] max-w-full rounded-lg object-cover object-center "
-            src="https://drive.google.com/file/d/1_DOyv8Ft2L9gxBU3b8z9F3l1RGI42AP8/preview"
+        <img
+            className="h-[280px] w-[300px] rounded-lg object-center object-contain md:hover:object-cover md:object-cover hover:object-contain"
+            src="/img/events/pmclub_1.jpg"
           />
         </div>
         <div>
-          <iframe
-            className="h-[480px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/10dk69miQUVqq5zGtDyGXEA4q3vOjaQo6/preview"
+        <img
+            className="h-[480px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/researchshowcase_3.png"
           />
         </div>
       </div>
-      <div className="grid">
+      <div className="grid gap-4">
         <div>
-          <iframe
-            className="h-[480px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/13vjrlHzjUxBvTUGCp273gBi87-2Jf3TH/preview"
+        <img
+            className="h-[480px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/bash_1.jpg"
           />
         </div>
         <div>
-          <iframe
-            className="h-[480px] max-w-full rounded-lg object-cover object-center"
-            src="https://drive.google.com/file/d/1aNKVKbCVPqsC2HHPbQJawmylZK3IkUIV/preview"
+        <img
+            className="h-[480px] w-[300px] rounded-lg object-center object-cover md:hover:object-cover hover:object-contain"
+            src="/img/events/aoc_12.jpg"
           />
         </div>
       </div>
