@@ -25,9 +25,9 @@ export default function webdev(){
           <p>
             In web development, there are two main areas: front end and back end. 
             <br></br><br></br>
-            1. Front End: This is what users see and interact with directly. It's like the facade of a building. Front end development involves using HTML, CSS, and JavaScript to create the layout, design, and interactivity of a website or web application. Front end developers focus on ensuring a seamless and visually appealing user experience across different devices and browsers.
+            1. Front End: This is what users see and interact with directly. It&apos;s like the facade of a building. Front end development involves using HTML, CSS, and JavaScript to create the layout, design, and interactivity of a website or web application. Front end developers focus on ensuring a seamless and visually appealing user experience across different devices and browsers.
             <br></br><br></br>
-            2. Back End: This is like the infrastructure behind the scenes, powering everything. Back end development involves working with server-side languages (such as Python, Ruby, PHP, or Node.js) and databases to manage data, handle user authentication, and perform other server-side tasks. Back end developers build and maintain the server, databases, and application logic that enable the front end to function properly. So for example, when you click a button, the back end handles the "click" action and leads the user to the next step after the click (another link, a different page, a google form, etc). 
+            2. Back End: This is like the infrastructure behind the scenes, powering everything. Back end development involves working with server-side languages (such as Python, Ruby, PHP, or Node.js) and databases to manage data, handle user authentication, and perform other server-side tasks. Back end developers build and maintain the server, databases, and application logic that enable the front end to function properly. So for example, when you click a button, the back end handles the &quot;click&quot; action and leads the user to the next step after the click (another link, a different page, a google form, etc). 
           <br></br><br></br>
           Front End Resources: 
           <br></br>

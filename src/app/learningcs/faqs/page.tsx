@@ -35,7 +35,7 @@ export default function faqs(){
                 <br></br>
                 <p className="font-bold"> QUESTION: I&apos;m struggling with my CS courses. What can I do? </p>
             <p className="indent-4">
-            Your first resource should be reaching out to your Teaching Assistant - don&apos;t be afraid to go for Office Hours! Even if you think you&apos;re asking a doubt “too late,” don't worry - it&apos;s never too late and chances are, your TAs will always be more than happy to help (only during their official Office Hours though, please don't approach them for course related queries randomly on Campus, they have Office Hours and Email channels for this)!  <br></br> <br></br>
+            Your first resource should be reaching out to your Teaching Assistant - don&apos;t be afraid to go for Office Hours! Even if you think you&apos;re asking a doubt “too late,” don&apos;t worry - it&apos;s never too late and chances are, your TAs will always be more than happy to help (only during their official Office Hours though, please don&apos;t approach them for course related queries randomly on Campus, they have Office Hours and Email channels for this)!  <br></br> <br></br>
             Your next source would be contacting the Teaching Fellow, if there&apos;s one for the course. You can also always book Office Hours with the Professor. 
 
             The nice thing about Computer Science, however, is that there&apos;s a lot of resources available online.
