@@ -11,7 +11,7 @@ const OpenMenu: React.FC = () => {
     }
     return(
         <div className="z-50 flex items-end justify-end bg-opacity-50">
-        <div className="absolute top-0 right-0 w-1/2 bg-secondary transition-transform ease-in-out h-full"> 
+        <div className="absolute top-0 right-0 w-1/2 bg-secondary transition-transform ease-in-out h-full overflow-y-auto"> 
         <div className={`${poppins.className} m-4`}>
             <CloseMenu />
             <ul className="p-4">

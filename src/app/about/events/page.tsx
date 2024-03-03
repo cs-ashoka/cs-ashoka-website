@@ -11,7 +11,7 @@ import tanmayjalan from "../../../../public/team/tanmayjalan.jpg";
 import zivbaretto from "../../../../public/team/zivbaretto.jpeg";
 import LeftMember from "@/components/team/left";
 import RightMember from "@/components/team/right";
-import LeftMemberForMobile from "@/components/team/ismobile";
+import LeftMemberForMobile from "@/components/team/leftformobile";
 
 export default function Events(){
   return (

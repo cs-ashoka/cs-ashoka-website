@@ -7,10 +7,9 @@ export const info = [{
 },{
         "id": 2, 
         "img": "",
-        "resource": "Computer Security",
-        "description" : "Get into Computer Security: crypto, encryptions, etc",
-        "link" : "./learningcs/compsec"
-
+        "resource": "Getting into Data Sci and AI", 
+        "description": "Courses to get started with Data Science",
+        "link" : "./learningcs/datasciandai"
 },{
         "id": 3,
         "img": "",
@@ -26,15 +25,15 @@ export const info = [{
 },{
         "id": 5, 
         "img": "",
-        "resource": "Getting started with Programming", 
-        "description": "Courses to get started with Programming",
-        "link" : "./learningcs/programming"
+        "resource": "Computer Security",
+        "description" : "Get into Computer Security: crypto, encryptions, etc",
+        "link" : "./learningcs/compsec"
 },{
         "id": 6, 
         "img": "",
-        "resource": "Getting into Data Sci and AI", 
-        "description": "Courses to get started with Data Science",
-        "link" : "./learningcs/datasciandai"
+        "resource": "Getting started with Programming", 
+        "description": "Courses to get started with Programming",
+        "link" : "./learningcs/programming"
 },{
         "id": 7, 
         "img": "",

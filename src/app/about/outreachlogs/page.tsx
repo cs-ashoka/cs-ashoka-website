@@ -12,7 +12,7 @@ import rushilgupta from "../../../../public/team/rushilgupta.jpeg";
 import vanshbothra from "../../../../public/team/vanshbothra.jpg";
 import LeftMember from "@/components/team/left";
 import RightMember from "@/components/team/right";
-import LeftMemberForMobile from "@/components/team/ismobile";
+import LeftMemberForMobile from "@/components/team/leftformobile";
 
 export default function Outreachlogs(){
   return (

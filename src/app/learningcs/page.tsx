@@ -4,7 +4,7 @@ import React from "react";
 import { bayon } from "@/utils/fonts";
 import ResourceCard from "@/components/cards/resource-card";
 import "./learningcs.css"
-import { info } from "./search/search"; 
+import { info } from "./search"; 
 import Image from "next/image";
 import SearchBar from "../../../public/img/searchbar.png";
 import { useState } from "react";
@@ -14,11 +14,11 @@ export default function LearningCS() {
   console.log(search);
     return (
       <main className="">
-        <div className="flex grid grid-cols-2">
-        <p className={`${bayon.className} mt-10 ml-20 text-white text-6xl md:text-7xl`}>
+        <div className="md:flex md:grid md:grid-cols-2">
+        <p className={`${bayon.className} flex items-center justify-center mt-10 md:-ml-10 text-white text-6xl md:text-7xl`}>
           LEARNING CS
         </p>
-      <form className="flex items-center justify-center" >
+      <form className="mt-4 flex items-center justify-center" >
         <input
           type="text"
           placeholder="Search"
@@ -32,7 +32,7 @@ export default function LearningCS() {
             className="-ml-8" />
           </form>
       </div>
-      <div className={`mt-4 mb-10 mx-auto grid grid-cols-2 gap-6 md:grid-cols-3 px-20`}>
+      <div className={`mt-4 mb-10 mx-auto grid grid-cols-2 gap-6 md:grid-cols-3 px-4 md:px-20`}>
       {info.filter((item) => {
         return search.toLowerCase() === '' ? item : item.resource.toLowerCase().includes(search)
       }).map((item) => (

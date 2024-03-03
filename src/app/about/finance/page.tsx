@@ -7,7 +7,7 @@ import shraddhakrishnaswami from "../../../../public/team/shraddhakrishnaswami.p
 import umangchauhan from "../../../../public/team/umangchauhan.png";
 import LeftMember from "@/components/team/left";
 import RightMember from "@/components/team/right";
-import LeftMemberForMobile from "@/components/team/ismobile";
+import LeftMemberForMobile from "@/components/team/leftformobile";
 
 
 export default function Finance(){

@@ -9,7 +9,7 @@ interface GalleryProps {
 
 export function GalleryWithCarousel({ imageList }: GalleryProps) {
   return (
-    <Carousel loop={true} autoplay={true} className="mx-auto w-3/5 rounded-xl">
+    <Carousel loop={true} autoplay={true} className="mx-auto w-4/5 md:w-3/5 rounded-xl">
       {imageList.map((imageUrl, index) => (
         <img
           key={index}
