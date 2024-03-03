@@ -5,6 +5,7 @@ import Image from "next/image";
 import HeroImage from "../../../../public/img/aboutbg.png";
 import { getSortedPostsData } from "@/lib/event-posts";
 import { getPostData } from "@/lib/event-posts";
+import { GalleryWithCarousel } from "@/components/carousel/carousel";
 import NotFound from "@/app/not-found";
 import { imageOptimizer } from "next/dist/server/image-optimizer";
 
@@ -42,8 +43,9 @@ export default async function EventsPost({ params }: { params: { slug: string } 
 
   if (!eventPosts.find(event => event.slug === params.slug)) NotFound()
 
-  const { title, date, contentHtml } = await getPostData(params.slug)
-
+  const { title, date, contentHtml, imgList } = await getPostData(params.slug)
+  console.log(imgList);
+  // var imgList:string[] = new Array("hi")
   // const eventDate = getFormattedDate(date)
 
   return (
@@ -78,6 +80,8 @@ export default async function EventsPost({ params }: { params: { slug: string } 
         <div className={`bg-white py-5 px-10 rounded-2xl max-md:text-center mt-8`}>
           <section className={`${poppins.className} text-black md:text-4md text-justify`} dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </div>
+        <br></br><br></br>
+        <GalleryWithCarousel imageList = {imgList}/>
       </div>
     </main>
   );
