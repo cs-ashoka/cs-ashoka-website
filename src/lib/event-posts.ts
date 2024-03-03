@@ -6,8 +6,9 @@ import html from 'remark-html'
 
 type EventPost = {
     slug: string,
-    title: string
-    date: string
+    title: string,
+    date: string,
+    imgList: string[]
 }
 
 const postsDirectory = path.join(process.cwd(), '/src/eventposts')
@@ -30,6 +31,7 @@ export function getSortedPostsData() {
             slug,
             title: matterResult.data.title,
             date: matterResult.data.date,
+            imgList: matterResult.data.imgList
         }
 
         // Combine the data with the id
@@ -58,6 +60,7 @@ export async function getPostData(slug: string) {
         title: matterResult.data.title,
         date: matterResult.data.date,
         contentHtml,
+        imgList: matterResult.data.imgList
     }
 
     // Combine the data with the id
