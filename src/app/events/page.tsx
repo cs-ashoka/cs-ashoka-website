@@ -7,7 +7,7 @@ import HeroImage from "../../../public/img/aboutbg.png";
 import Countdown from "../../components/countdown/counter";
 import EventCard from '@/components/cards/event-card';
 import { getSortedPostsData } from '@/lib/event-posts';
-import { MasonryGridGallery } from "@/components/carousel/carousel";
+import { MasonryGridGallery } from "@/components/carousel/masonry";
 
 
 const EventsPage = () => {
