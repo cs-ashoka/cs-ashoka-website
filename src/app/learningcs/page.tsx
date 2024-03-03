@@ -4,7 +4,7 @@ import React from "react";
 import { bayon } from "@/utils/fonts";
 import ResourceCard from "@/components/cards/resource-card";
 import "./learningcs.css"
-import { info } from "./search/page"; 
+import { info } from "./search/search"; 
 import Image from "next/image";
 import SearchBar from "../../../public/img/searchbar.png";
 import { useState } from "react";

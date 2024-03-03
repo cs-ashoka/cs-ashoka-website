@@ -65,4 +65,4 @@ export const info = [{
         "resource": "Web Development", 
         "description": "Learn more about the languages used in Web Development and get started",
         "link" : "./learningcs/webdev"
-}]
+}];

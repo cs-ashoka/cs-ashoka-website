@@ -21,7 +21,7 @@ export default function historyoftech(){
           </span>
       </div>
       <div>
-        <Resource resource="HISTORY OF TECH" info="Um" />
+        <Resource img = "" resource="HISTORY OF TECH" info="Um" />
       </div>
       </main>
         </>

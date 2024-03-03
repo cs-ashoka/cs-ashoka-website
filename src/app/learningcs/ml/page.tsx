@@ -21,7 +21,7 @@ export default function ml(){
           </span>
       </div>
       <div>
-        <Resource IMG = "" resource="MACHINE LEARNING" info={
+        <Resource img = "" resource="MACHINE LEARNING" info={
           <p>
              This is a small section of a very popular beginners level course on Machine Learning by Andrew Ng: <a href = "https://www.youtube.com/watch?v=NhZXRzH2y-E&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=41" className="underline text-secondary"> Link </a>
           </p>
