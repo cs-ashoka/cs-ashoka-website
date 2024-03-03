@@ -31,10 +31,10 @@ const EventsPage = () => {
           <p
             className={`${bayon.className} text-white text-5xl md:text-7xl font-bold text-center`}
           >
-            UPCOMING EVENT:
+            SPACE TURTLE
           </p>
           <p className={`${poppins.className} md:mb-2 mb-1 md:-mt-2 -mt-1 text-white text-center font-medium`} style={{ fontStyle: 'italic' }}>
-            
+            @ Banjaara on April 6
           </p>
         </div>
         <Countdown />
