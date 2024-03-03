@@ -36,7 +36,7 @@ export default function Home() {
         <p
           className={`mt-4 my-2 mb-[3px] px-6 rounded-full font-extralight bg-secondary w-max drop-shadow-[2px_3px_3px_rgba(0,0,0,0.3)]`}
         >
-          Read More
+          <a href="/about">Read More</a>
         </p>
       </div>
     </main>
