@@ -1,5 +1,6 @@
 import { poppins, bayon } from "@/utils/fonts";
 import React from 'react';
+import "./resource.css";
 
 interface resourceCardDetails {
     img: string;
@@ -13,10 +14,10 @@ const ResourceCard: React.FC<resourceCardDetails> = ({ img, resource, descrp, li
     return (
         <div className="container bg-[#D9D9D9] w-full h-full rounded-[30px] md:rounded-[40px] mt-4 p-1 md:p-0 mx-auto">
             <div className="md:grid md:grid-cols-4">
-            <div className={`m-3 w-[7vh] h-[7vh] md:w-[12vh] md:h-[12vh] bg-secondary rounded-full `}> 
+            <div className={`responsive-div m-3 w-[7vh] h-[7vh] bg-secondary rounded-full `}> 
             <div className="w-[100%] h-[100%]" style={{backgroundImage:`${img}`, backgroundSize:"cover", backgroundPosition:'center', borderRadius:'100%' }}></div>
             </div>
-            <div className={`${poppins.className} md:col-span-3 md:text-2xl text-[14px] text-secondary flex items-center font-bold m-4`}>
+            <div className={`${poppins.className} text-size md:text-xl text-[14px] text-secondary flex items-center font-bold m-4`}>
                 {resource}
             </div>
             </div>
