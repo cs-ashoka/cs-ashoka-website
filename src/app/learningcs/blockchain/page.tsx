@@ -22,7 +22,7 @@ export default function blockchain(){
       </div>
       <div>
         <Resource img ="" resource="BLOCKCHAIN" info={
-          <p> CSSoc conducted a blockchain workshop which you can refer to <a href ="https://drive.google.com/file/d/1uavUwlbfDsxem_Cc31c3SgKgffRYSnXh/view?usp=drivesdk" className="text-secondary underline"> here</a> to get started with blockchain. </p>}/>
+          <p> The Computer Science Society conducted a blockchain workshop which you can refer to <a href ="https://drive.google.com/file/d/1uavUwlbfDsxem_Cc31c3SgKgffRYSnXh/view?usp=drivesdk" className="text-secondary underline"> here</a> to get started with blockchain. </p>}/>
       </div>
       </main>
         </>

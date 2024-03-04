@@ -31,7 +31,7 @@ export default function faqs(){
                 <p className="font-bold"> QUESTION: What is an ISM? How is it different from a regular course? </p>
                 <p className="indent-4"> An ISM refers to an Independent Study Module. It allows you to delve into research alongside a faculty mentor on a specific agenda. It&apos;s a really good resource to explore research you&apos;re interested in. <br></br><br></br>
                 
-                For Computer Science, in Spring 2024, students are allowed to count two ISMs towards their major degrees. After that, it doesn&apos;t count towards your degree anymore but you can partake in as many ISMs as you&apos;d like. Don&apos;t be afraid to reach out to a Professor! </p>
+                For Computer Science, as of Spring 2024, students are allowed to count two ISMs towards their major degrees. After that, it doesn&apos;t count towards your degree anymore but you can partake in as many ISMs as you&apos;d like. Don&apos;t be afraid to reach out to a Professor! </p>
                 <br></br>
                 <p className="font-bold"> QUESTION: I&apos;m struggling with my CS courses. What can I do? </p>
             <p className="indent-4">
@@ -43,9 +43,9 @@ export default function faqs(){
             <br></br> 
             <p className="font-bold"> QUESTION: What can I do with my summers/ winter holidays? </p>
 
-<p className="indent-4"> It&apos;s always a good idea to look into learning new skills during the holidays. Pick a topic that seems interesting to you (we have a lot of resources for different topics: check them out here), and try to learn its basics and more. It&apos;ll help you develop a problem solving attitude, and let you explore a lot more breadth of information rather than waiting for courses to cover it. <br></br><br></br>
+<p className="indent-4"> It&apos;s always a good idea to look into learning new skills during the holidays. Pick a topic that seems interesting to you (we have a lot of resources for different topics: check them out <a href="/learningcs" className="text-secondary underline"> here</a>), and try to learn its basics and more. It&apos;ll help you develop a problem solving attitude, and let you explore a wider breadth of information rather than waiting for courses to cover it. <br></br><br></br>
 
-Other than that, students also try to pursue Internship or Research Opportunities/ projects in order to explore different career paths in a more hands-on way, and to earn experience in the fields they&apos;re interested in. You can check out some Internship or Research Opportunities here. </p> </div>}/>
+Other than that, students also try to pursue Internship or Research Opportunities/ projects in order to explore different career paths in a more hands-on way, and to earn experience in the fields they&apos;re interested in. You can check out some Internship or Research Opportunities <a href="/internships" className="text-secondary underline"> here.</a> </p> </div>}/>
 </div>
       </main>
         </>
