@@ -44,7 +44,7 @@ export default async function EventsPost({ params }: { params: { slug: string } 
   if (!eventPosts.find(event => event.slug === params.slug)) NotFound()
 
   const { title, date, contentHtml, imgList } = await getPostData(params.slug)
-  console.log(imgList);
+  // console.log(imgList);
   // var imgList:string[] = new Array("hi")
   // const eventDate = getFormattedDate(date)
 
