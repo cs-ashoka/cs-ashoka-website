@@ -43,7 +43,7 @@ export default async function EventsPost({ params }: { params: { slug: string } 
 
   if (!eventPosts.find(event => event.slug === params.slug)) NotFound()
 
-  const { title, date, contentHtml, imgList } = await getPostData(params.slug)
+  const { title, date, contentHtml, imgList, type } = await getPostData(params.slug)
   console.log(imgList);
   // var imgList:string[] = new Array("hi")
   // const eventDate = getFormattedDate(date)
@@ -81,7 +81,7 @@ export default async function EventsPost({ params }: { params: { slug: string } 
           <section className={`${poppins.className} text-black md:text-4md text-justify`} dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </div>
         <br></br><br></br>
-        <GalleryWithCarousel imageList = {imgList}/>
+        <GalleryWithCarousel imageList = {imgList} type = {type}/>
       </div>
     </main>
   );
