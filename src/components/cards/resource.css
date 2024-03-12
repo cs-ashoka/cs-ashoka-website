@@ -1,4 +1,4 @@
-@media (min-width: 720px) and (max-width: 1179px){
+@media (min-width: 720px) and (max-width: 1180px){
     .responsive-div{
         width: 4vh;
         height: 4vh;
@@ -9,7 +9,7 @@
     }
 }
 
-@media(min-width: 1180px){
+@media(min-width: 1181px){
     .responsive-div{
         width: 12vh;
         height: 12vh;
