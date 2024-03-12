@@ -31,7 +31,7 @@ const EventsPage = () => {
           <p
             className={`${bayon.className} text-white text-5xl md:text-7xl font-bold text-center`}
           >
-            SPACE TURTLE
+            <a href ="https://unstop.com/competitions/space-turtle-banjaara-2024-ashoka-university-sonepat-haryana-923810"> SPACE TURTLE </a>
           </p>
           <p className={`${poppins.className} md:mb-2 mb-1 md:-mt-2 -mt-1 text-white text-center font-medium`} style={{ fontStyle: 'italic' }}>
             @ Banjaara on April 6
