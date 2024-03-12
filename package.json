@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.8",
+    "@vercel/analytics": "^1.2.2",
     "bootstrap": "^5.3.2",
     "clsx": "^2.0.0",
     "dom": "^0.0.3",

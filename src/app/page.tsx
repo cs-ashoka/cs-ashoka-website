@@ -4,6 +4,7 @@ import { poppins } from "@/utils/fonts";
 import Image from "next/image";
 import HeroImage from "../../public/img/hero.png";
 import TypeWriter from 'react-ts-typewriter';
+import { Analytics } from '@vercel/analytics/react';
 
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
           <a href="/about">Read More</a>
         </p>
       </div>
+      <Analytics/>
     </main>
   );
 }

@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { bayon } from "@/utils/fonts";
 import Background from "../../../public/img/aboutbg.png";
+import Instagram from "../../../public/contact/instalogo.png";
+import Email from "../../../public/contact/emaillogo.png";
+import Twitter from "../../../public/contact/twitterlogo.png";
 import React from 'react';
+import { poppins } from "@/utils/fonts";
+import Socials from "@/components/socials";
 
 export default function manifesto(){
     return(
