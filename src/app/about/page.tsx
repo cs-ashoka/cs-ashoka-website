@@ -35,7 +35,7 @@ export default function about(){
                 MEET OUR TEAM
             </p>
             </div>
-            <div className={`${bayon.className} text-center text-2xl md:text-3xl grid grid-cols-2 md:grid-cols-5 gap-y-6 border-1 border-black max-w-7xl`} style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
+            <div className={`${bayon.className} text-center text-2xl md:text-3xl grid grid-cols-2 md:grid-cols-6 gap-6 border-1 border-black max-w-7xl`} style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
                 <span className="">
                 <MeetTheTeam type = "CORE" href= 'about/core'/>
                 </span>
@@ -43,6 +43,7 @@ export default function about(){
                 <MeetTheTeam type = "OUTREACH AND LOGISTICS" href = "about/outreachlogs" />
                 <MeetTheTeam type = "EVENTS" href = "about/events" />
                 <MeetTheTeam type = "FINANCE" href = "about/finance" />
+                <MeetTheTeam type = "DEV VERTICAL" href="about/dev" />
                 </div>
                 <footer className={`mt-8 rounded-t-[30px] md:rounded-t-[20px] p-4 px-[40px] md:px-[60px] bg-primary mt-4`}>
                 <p className={`${poppins.className} text-center line-height-[45px] text-xl mb-2 text-tertiary`}>Contact Us</p>
