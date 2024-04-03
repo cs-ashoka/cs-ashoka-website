@@ -1,204 +1,185 @@
 ---
 title: 'Python Turtle Workshop'
 date: '3/4/2024'
-imgList: ["/img/events/notion_4.jpeg", "/img/events/videos/notion_1.mp4", "/img/events/videos/notion_2.mp4", "/img/events/videos/notion_3.mp4"]
-type: ["image", "video", "video", "video"]
+imgList: []
+type: []
 ---
 
-<b>Spaceship </b>:
-
-def drawSpaceShip(x, y):
-    ship.clear()
-    deactivateKeys()
-    ship.penup()
-    ship.goto(x, y)
-    ship.setheading(0)
-    ship.pendown()
-    ship.fillcolor("black")
-    ship.begin_fill()
-    # make the rectangle
-    ship.forward(20)
-    ship.right(90)
-    ship.forward(10)
-    ship.right(90)
-    ship.forward(20)
-    ship.right(90)
-    ship.forward(10)
-    # make the cannon
-    ship.right(90)
-    ship.forward(5)
-    ship.left(90)
-    ship.forward(15)
-    ship.right(90)
-    ship.forward(10)
-    ship.right(90)
-    ship.forward(15)
-
-    ship.end_fill()
-    ship.penup()
-    ship.goto(x, y)
-    activateKeys()
-
-
-<b>Create Laser</b>:
-
-def createLaser():
-    global lasers
-    global ship
-    laser = turtle.Turtle()
-    laser.ht()
-    laser.penup()
-    laser.color("red")
-    laser.goto(ship.xcor() + 10, ship.ycor() + 20)
-    lasers.append(laser)
-
-
-<b> Generate Asteroids </b>
-def generateAsteroid():
-    asteroid_width = random.randint(35, 45)
-    gen_x = random.randint(-1 * w // 2 + 20, w // 2 - asteroid_width - 5)
-    gen_y = h // 2
-
-    asteroid = turtle.Turtle()
-    asteroid.ht()
-    asteroid.penup()
-    asteroid.fillcolor(118/255, 118/255, 118/255)
-    asteroid.goto(gen_x, gen_y)
-    asteroids.append(asteroid)
-    asteroid_widths.append(asteroid_width)
-
-
-<b> Draw Cloud </b>
-def drawCloud(x, y):
-    c = turtle.Turtle()
-
-    def filled_circle(radius, color):
-        c.color(color, color)
-        c.begin_fill()
-        c.circle(radius)
-        c.end_fill()
-
-    radius = 50
-    cloud_color = "white"
-    c.penup()
-    c.goto(x,y)
-    c.pendown()
-    filled_circle(radius, cloud_color)
-    c.forward(radius)
-    filled_circle(radius, cloud_color)
-    c.right(90)
-    filled_circle(radius, cloud_color)
-    c.right(90)
-    filled_circle(radius, cloud_color)
-    c.right(90)
-    filled_circle(radius, cloud_color)
-    c.right(90)
-
-
-<b> Draw Laser </b>
-def drawLaser(laser):
-    laser.clear()
-    laser.pendown()
-    laser.setheading(0)
-    laser.begin_fill()
-    laser.forward(3)
-    laser.right(90)
-    laser.forward(10)
-    laser.right(90)
-    laser.forward(3)
-    laser.right(90)
-    laser.forward(10)
-    laser.penup()
-    laser.end_fill()
-    laser.goto(laser.xcor(), laser.ycor() + 10)
-
-
-<b> Draw Asteroid </b>
-def drawAsteroid(ast):
-    speed = 2
-
-    new_cors = [ast.xcor(), ast.ycor() - speed]
-    ast.goto(ast.xcor(), ast.ycor() - speed)
-    width = asteroid_widths[i]
-    ast.pendown()
-    # making top side
-    ast.begin_fill()
-    ast.setheading(0)
-    ast.forward(width // 3)
-    ast.right(90)
-    ast.forward(5)
-    ast.left(90)
-    ast.forward(width // 6)
-    ast.right(90)
-    ast.forward(7)
-    ast.left(90)
-    ast.forward(width // 6)
-
-    # making right side
-    ast.right(90)
-    ast.forward(20)
-    ast.right(90)
-    ast.forward(4)
-    ast.left(90)
-    ast.forward(40)
-    ast.right(90)
-    ast.forward(2)
-    ast.left(90)
-    ast.forward(20)
-
-    # making bottom
-    ast.right(90)
-    ast.forward(width // 2)
-    ast.left(90)
-    ast.forward(7)
-    ast.right(90)
-    ast.forward(width // 4)
-    ast.left(90)
-    ast.forward(3)
-    ast.right(90)
-    ast.forward(width // 4)
-
-    # making left side
-    ast.right(90)
-    ast.forward(40)
-    ast.left(90)
-    ast.forward(5)
-    ast.right(90)
-    ast.forward(30)
-    ast.goto(new_cors[0], new_cors[1])
-
-    ast.end_fill()
-    ast.penup()
-
-
-<b> Draw the background </b>
-
-# draw background once
-bg = turtle.Turtle()
-bg.penup()
-hw = w // 2
-hh = h // 2
-bg.goto(-hw, hh)
-bg.fillcolor((135/255, 206/255, 235/255))
-bg.begin_fill()
-bg.pendown()
-bg.goto(hw, hh)
-bg.goto(hw, -hh + 30)
-bg.goto(-hw, -hh + 30)
-bg.goto(-hw, hh)
-bg.penup()
-
-bg.end_fill()
-
-
-<b> Draw ground </b>
-# draw ground
-bg.goto(-hw, -hh + 30)
-bg.fillcolor((182/255,159/255,102/255))
-bg.begin_fill()
-bg.pendown()
-bg.goto(hw, -hh + 30)
-bg.goto(hw, -hh)
-bg.goto(-hw, -hh)
-bg.goto(-hw, -hh+ 30)
-bg.end_fill()
+Spaceship:\n
+def drawSpaceShip(x, y):\n
+    ship.clear()\n
+    deactivateKeys()\n
+    ship.penup()\n
+    ship.goto(x, y)\n
+    ship.setheading(0)\n
+    ship.pendown()\n
+    ship.fillcolor("black")\n
+    ship.begin_fill()\n
+    # make the rectangle\n
+    ship.forward(20)\n
+    ship.right(90)\n
+    ship.forward(10)\n
+    ship.right(90)\n
+    ship.forward(20)\n
+    ship.right(90)\n
+    ship.forward(10)\n
+    # make the cannon\n
+    ship.right(90)\n
+    ship.forward(5)\n
+    ship.left(90)\n
+    ship.forward(15)\n
+    ship.right(90)\n
+    ship.forward(10)\n
+    ship.right(90)\n
+    ship.forward(15)\n\n
+    ship.end_fill()\n
+    ship.penup()\n
+    ship.goto(x, y)\n
+    activateKeys()\n\n
+\n
+Create Laser:\n
+def createLaser():\n
+    global lasers\n
+    global ship\n
+    laser = turtle.Turtle()\n
+    laser.ht()\n
+    laser.penup()\n
+    laser.color("red")\n
+    laser.goto(ship.xcor() + 10, ship.ycor() + 20)\n
+    lasers.append(laser)\n\n
+\n
+Generate Asteroids\n
+def generateAsteroid():\n
+    asteroid_width = random.randint(35, 45)\n
+    gen_x = random.randint(-1 * w // 2 + 20, w // 2 - asteroid_width - 5)\n
+    gen_y = h // 2\n\n
+    asteroid = turtle.Turtle()\n
+    asteroid.ht()\n
+    asteroid.penup()\n
+    asteroid.fillcolor(118/255, 118/255, 118/255)\n
+    asteroid.goto(gen_x, gen_y)\n
+    asteroids.append(asteroid)\n
+    asteroid_widths.append(asteroid_width)\n\n
+\n
+Draw Cloud \n
+def drawCloud(x, y):\n
+    c = turtle.Turtle()\n\n
+    def filled_circle(radius, color):\n
+        c.color(color, color)\n
+        c.begin_fill()\n
+        c.circle(radius)\n
+        c.end_fill()\n\n
+    radius = 50\n
+    cloud_color = "white"\n
+    c.penup()\n
+    c.goto(x,y)\n
+    c.pendown()\n
+    filled_circle(radius, cloud_color)\n
+    c.forward(radius)\n
+    filled_circle(radius, cloud_color)\n
+    c.right(90)\n
+    filled_circle(radius, cloud_color)\n
+    c.right(90)\n
+    filled_circle(radius, cloud_color)\n
+    c.right(90)\n
+    filled_circle(radius, cloud_color)\n
+    c.right(90)\n\n
+\n
+Draw Laser \n
+def drawLaser(laser):\n
+    laser.clear()\n
+    laser.pendown()\n
+    laser.setheading(0)\n
+    laser.begin_fill()\n
+    laser.forward(3)\n
+    laser.right(90)\n
+    laser.forward(10)\n
+    laser.right(90)\n
+    laser.forward(3)\n
+    laser.right(90)\n
+    laser.forward(10)\n
+    laser.penup()\n
+    laser.end_fill()\n
+    laser.goto(laser.xcor(), laser.ycor() + 10)\n\n
+\n
+Draw Asteroid \n
+def drawAsteroid(ast):\n
+    speed = 2\n\n
+    new_cors = [ast.xcor(), ast.ycor() - speed]\n
+    ast.goto(ast.xcor(), ast.ycor() - speed)\n
+    width = asteroid_widths[i]\n
+    ast.pendown()\n
+    # making top side\n
+    ast.begin_fill()\n
+    ast.setheading(0)\n
+    ast.forward(width // 3)\n
+    ast.right(90)\n
+    ast.forward(5)\n
+    ast.left(90)\n
+    ast.forward(width // 6)\n
+    ast.right(90)\n
+    ast.forward(7)\n
+    ast.left(90)\n
+    ast.forward(width // 6)\n\n
+    # making right side\n
+    ast.right(90)\n
+    ast.forward(20)\n
+    ast.right(90)\n
+    ast.forward(4)\n
+    ast.left(90)\n
+    ast.forward(40)\n
+    ast.right(90)\n
+    ast.forward(2)\n
+    ast.left(90)\n
+    ast.forward(20)\n\n
+    # making bottom\n
+    ast.right(90)\n
+    ast.forward(width // 2)\n
+    ast.left(90)\n
+    ast.forward(7)\n
+    ast.right(90)\n
+    ast.forward(width // 4)\n
+    ast.left(90)\n
+    ast.forward(3)\n
+    ast.right(90)\n
+    ast.forward(width // 4)\n\n
+    # making left side\n
+    ast.right(90)\n
+    ast.forward(40)\n
+    ast.left(90)\n
+    ast.forward(5)\n
+    ast.right(90)\n
+    ast.forward(30)\n
+    ast.goto(new_cors[0], new_cors[1])\n\n
+    ast.end_fill()\n
+    ast.penup()\n\n
+\n
+Draw the background\n
+\n
+# draw background once\n
+bg = turtle.Turtle()\n
+bg.penup()\n
+hw = w // 2\n
+hh = h // 2\n
+bg.goto(-hw, hh)\n
+bg.fillcolor((135/255, 206/255, 235/255))\n
+bg.begin_fill()\n
+bg.pendown()\n
+bg.goto(hw, hh)\n
+bg.goto(hw, -hh + 30)\n
+bg.goto(-hw, -hh + 30)\n
+bg.goto(-hw, hh)\n
+bg.penup()\n\n
+bg.end_fill()\n\n
+\n
+Draw ground\n
+# draw ground\n
+bg.goto(-hw, -hh + 30)\n
+bg.fillcolor((182/255,159/255,102/255))\n
+bg.begin_fill()\n
+bg.pendown()\n
+bg.goto(hw, -hh + 30)\n
+bg.goto(hw, -hh)\n
+bg.goto(-hw, -hh)\n
+bg.goto(-hw, -hh+ 30)\n
+bg.end_fill()\n
