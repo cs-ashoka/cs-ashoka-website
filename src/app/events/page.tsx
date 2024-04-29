@@ -27,19 +27,18 @@ const EventsPage = () => {
         </span>
       </div>
       <div className={`w-full mx-auto grid grid-rows-2 grid-flow-col`}>
-        <div className={`w-full mx-auto mt-[4vh] md:mt-[7vh]`}>
+        <div className={`w-full mx-auto mt-[4vh] md:mt-[0vh]`}>
           <p
-            className={`${bayon.className} text-white text-5xl md:text-7xl font-bold text-center`}
+            className={`${bayon.className} text-primary text-5xl md:text-7xl font-bold text-center`}
           >
-            <a href ="https://unstop.com/competitions/space-turtle-banjaara-2024-ashoka-university-sonepat-haryana-923810"> SPACE TURTLE </a>
+            <a href ="https://unstop.com/competitions/space-turtle-banjaara-2024-ashoka-university-sonepat-haryana-923810"> NEW EVENTS </a>
           </p>
-          <p className={`${poppins.className} md:mb-2 mb-1 md:-mt-2 -mt-1 text-white text-center font-medium`} style={{ fontStyle: 'italic' }}>
-            @ Banjaara on April 6
+          <p className={`${poppins.className} md:-mt-2 -mt-1 text-primary text-center font-medium`} style={{ fontStyle: 'italic' }}>
+            coming next semester!
           </p>
         </div>
-        <Countdown />
       </div>
-      <div className={`w-full ml-10 md:ml-32 mt-20 md:mt-8`}>
+      <div className={`w-full ml-10 md:ml-32`}>
         <p className={`${bayon.className} text-primary text-4xl`}>
           RECENT EVENTS:
         </p>
