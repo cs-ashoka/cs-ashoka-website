@@ -1,4 +1,4 @@
-import { Poppins, Bayon } from 'next/font/google';
+import { Poppins, Bayon, IM_Fell_DW_Pica } from 'next/font/google';
 
 export const poppins = Poppins({
   subsets: ['latin'],
@@ -10,4 +10,10 @@ export const poppins = Poppins({
 export const bayon = Bayon({
   subsets: ['latin'],
   weight: '400',
+});
+
+export const IM = IM_Fell_DW_Pica({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal','italic'],
 });

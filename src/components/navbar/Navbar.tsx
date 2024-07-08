@@ -67,6 +67,7 @@ const OpenMenu: React.FC = () => {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/events">Events</NavItem>
         <NavItem href="/resources">Resources</NavItem>
+        <NavItem href="/newsletter"> Newsletter </NavItem>
         <NavItem href="/manifesto">Our Manifesto</NavItem>
       </ul>
       <div className="md:hidden">
