@@ -49,6 +49,7 @@ const OpenMenu: React.FC = () => {
           <NavItem href="/about" onClick={toggleMenu}>About</NavItem>
           <NavItem href="/events" onClick={toggleMenu}>Events</NavItem>
           <NavItem href="/resources" onClick={toggleMenu}>Resources</NavItem>
+          <NavItem href="/newsletter" onClick={toggleMenu}> Newsletter </NavItem>
           <NavItem href="/manifesto" onClick={toggleMenu}>Our Manifesto</NavItem>
           </ul>
       </div>
