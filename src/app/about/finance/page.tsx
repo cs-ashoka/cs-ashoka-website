@@ -40,7 +40,7 @@ export default function Finance(){
                   <LeftMember imgl={anuravsingh} personl = "Anurav Singh" batchl = "UG 25" />
                   <RightMember imgr={arnavgoyal} personr = "Arnav Goyal" batchr = "UG 27" /> 
                   <LeftMemberForMobile imgl={fiona} personl = "Fiona Arora" batchl = "UG 24" />
-                  <RightMember imgr={shraddhakrishnaswami} personr = "Shraddha Krishnaswami" batchr = "UG 27" /> 
+                  {/* <RightMember imgr={shraddhakrishnaswami} personr = "Shraddha Krishnaswami" batchr = "UG 27" />  */}
                   <LeftMemberForMobile imgl={umangchauhan} personl = "Umang Chauhan" batchl = "UG 27" />
               </div>
             </div>
