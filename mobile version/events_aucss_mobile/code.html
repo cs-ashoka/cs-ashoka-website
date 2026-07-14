@@ -1,0 +1,268 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AUCSS | Events</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1e",
+                        "outline": "#926f6b",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "secondary": "#5e5e5e",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline-variant": "#e7bdb8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "tertiary-container": "#65758c",
+                        "on-tertiary-container": "#fcfbff",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "on-secondary-container": "#646464",
+                        "tertiary": "#4d5c72",
+                        "on-primary-fixed-variant": "#93000f",
+                        "primary": "#b90015",
+                        "on-surface-variant": "#5d3f3c",
+                        "inverse-primary": "#ffb4ac",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-secondary-fixed-variant": "#474747",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d8dadc",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#c00017",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "secondary-container": "#e2e2e2",
+                        "on-primary-container": "#fff9f8",
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "primary-container": "#e21e26",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed": "#410003",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Geist"],
+                        "display": ["Geist"],
+                        "body": ["Inter"],
+                        "label": ["JetBrains Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal-item {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .reveal-1 { animation-delay: 0.1s; }
+        .reveal-2 { animation-delay: 0.2s; }
+        .reveal-3 { animation-delay: 0.3s; }
+        .reveal-4 { animation-delay: 0.4s; }
+        .reveal-5 { animation-delay: 0.5s; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface fixed top-0 w-full z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-6 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-100 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline font-bold text-primary uppercase tracking-tighter text-headline-md">AUCSS</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-screen-xl mx-auto space-y-10">
+<!-- Page Header -->
+<section class="reveal-item reveal-1" style="opacity: 1; animation-play-state: running;">
+<span class="font-label text-primary text-[12px] uppercase tracking-widest mb-2 block">C:/ROOT/EVENTS</span>
+<h1 class="font-headline text-[40px] font-bold leading-tight tracking-tight text-on-background">System <br>Events</h1>
+<p class="text-on-surface-variant mt-4 text-body-md leading-relaxed">Connecting the next generation of architects, engineers, and digital innovators through rigorous technical workshops and social gatherings.</p>
+</section>
+<!-- Upcoming Events -->
+<section class="space-y-6">
+<div class="flex items-center justify-between reveal-item reveal-2" style="opacity: 1; animation-play-state: running;">
+<h2 class="font-headline text-headline-md font-semibold text-on-background uppercase tracking-tight">Upcoming</h2>
+<span class="font-label text-label-mono text-secondary">03 TOTAL</span>
+</div>
+<div class="space-y-4">
+<!-- Event Card 1 -->
+<div class="reveal-item reveal-3 glass-card rounded-xl p-5 relative overflow-hidden group" style="opacity: 1; animation-play-state: running;">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="font-label text-primary font-bold text-lg leading-none">OCT 24</span>
+<span class="font-label text-secondary text-xs uppercase tracking-tighter">THURSDAY</span>
+</div>
+<div class="px-3 py-1 bg-primary text-on-primary font-label text-[10px] rounded-full uppercase">Workshop</div>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2">Neural Networks from Scratch</h3>
+<p class="text-on-surface-variant text-sm mb-4">A deep dive into backpropagation and gradient descent without the crutch of high-level libraries.</p>
+<div class="flex items-center gap-3 text-secondary text-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label">LAB_404 // SCIENCE BLDG</span>
+</div>
+<button class="mt-6 w-full py-3 bg-on-background text-on-primary rounded-lg font-label text-sm uppercase tracking-wide hover:bg-primary transition-colors active:scale-[0.98] duration-150">
+                        Secure Access
+                    </button>
+</div>
+<!-- Event Card 2 -->
+<div class="reveal-item reveal-4 glass-card rounded-xl p-5 relative overflow-hidden group" style="opacity: 1; animation-play-state: running;">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="font-label text-primary font-bold text-lg leading-none">NOV 02</span>
+<span class="font-label text-secondary text-xs uppercase tracking-tighter">SATURDAY</span>
+</div>
+<div class="px-3 py-1 bg-tertiary-container text-on-tertiary font-label text-[10px] rounded-full uppercase">Social</div>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2">Binary &amp; Brews Mixer</h3>
+<p class="text-on-surface-variant text-sm mb-4">Casual networking session for undergraduates and industry leads in a relaxed environment.</p>
+<div class="flex items-center gap-3 text-secondary text-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label">THE_COMMONS</span>
+</div>
+<button class="mt-6 w-full py-3 border border-on-background text-on-background rounded-lg font-label text-sm uppercase tracking-wide hover:bg-secondary-container transition-colors active:scale-[0.98] duration-150">
+                        RSVP
+                    </button>
+</div>
+</div>
+</section>
+<!-- Past Highlights -->
+<section class="space-y-6">
+<div class="flex items-center justify-between reveal-item reveal-5" style="opacity: 1; animation-play-state: running;">
+<h2 class="font-headline text-headline-md font-semibold text-on-background uppercase tracking-tight">Archive</h2>
+<a class="font-label text-label-mono text-primary text-xs uppercase hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Highlight 1 -->
+<div class="reveal-item reveal-5 group cursor-pointer" style="opacity: 1; animation-play-state: running;">
+<div class="aspect-square w-full rounded-xl overflow-hidden mb-3 border border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic capture of a technical coding competition. Dim lighting with glowing blue and red monitors illuminating the intense, focused faces of students. The atmosphere is professional and high-stakes, with wires and high-end peripherals visible in a clean, modern lab setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdLgyuCB7pZVffkCeJexGDD1KjK4DgHWeZoW8HQL0jLcVE_Ep_4Iq2u5rBuUOkvGgDmeqJsrGdErmld188vwocGsJGZT2O3wuUcVeIh870ytzIPOdIFXHNoPfc07ZCKVB6Ryc_okl9Co-rm6kEbhh_5zG8aEPpP5xdZ0e7-WTlEuKFVPf5F2bJtApcIrHscngHlIWDKzGSm2CWvniXTY8kzS1g7tj0gIiZAENx-yyK0-SkV8zahqWYrG6lXXLwySMUxt7lwdz3loM">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+<span class="text-white font-label text-[10px] uppercase">View Gallery</span>
+</div>
+</div>
+<span class="font-label text-[10px] text-secondary uppercase block">SEP 2024</span>
+<h4 class="font-headline text-sm font-bold truncate">Hack_The_Core 1.0</h4>
+</div>
+<!-- Highlight 2 -->
+<div class="reveal-item reveal-5 group cursor-pointer" style="animation-delay: 0.6s; opacity: 1; animation-play-state: running;">
+<div class="aspect-square w-full rounded-xl overflow-hidden mb-3 border border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist shot of a technology seminar speaker on a stage. The background features a large screen with abstract geometric code patterns. The lighting is crisp and modern, emphasizing the academic excellence and professional tech environment. Predominantly white and black tones with subtle red accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbcntdxxfdSH79pltbDWvu2L24S06jNgP8jpi5F5XzVSTVsvNX6-DTYdWoOz21UfkujMeLoyvIDVwEH433eevVf58-yaXHLpd4fdJEMz3S3LqccSVKB344F85FvTxUVa3grtchRKeIq9LETRXrIQNwKfnNFCAAkrMYKGuyNDVx9mEUdGXOZ4VC7nZ4xtxNzb24bRtHqrc7beTDl2PkLdyc1mgrQF-1Ojg0MP7Hq0AFHDZr9jaIT2oQZm-nhc6pUkM1lQYb_Cg3HpI">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+<span class="text-white font-label text-[10px] uppercase">View Gallery</span>
+</div>
+</div>
+<span class="font-label text-[10px] text-secondary uppercase block">AUG 2024</span>
+<h4 class="font-headline text-sm font-bold truncate">AI Ethics Panel</h4>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB (Suppressed on this page as per rules, but included if primary action needed) -->
+<!-- Rule says suppress on Details, Transactional, Settings. Home/Dashboard/Events list usually keeps it for creation. However, the mandate says MUST suppress on Details. For a list like this, we'll follow the "Relevance" check. -->
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface fixed bottom-0 w-full z-50 border-t border-outline-variant flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-label text-[10px] uppercase mt-1">Terminal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label text-[10px] uppercase mt-1">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label text-[10px] uppercase mt-1">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label text-[10px] uppercase mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple Intersection Observer to trigger reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    // Reset animation to ensure it plays
+                    entry.target.style.animationPlayState = "running";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Toggle mobile drawer placeholder logic
+        document.querySelector('header button').addEventListener('click', () => {
+            console.log('Open Navigation Drawer');
+            // This would typically reveal the NavigationDrawer component from JSON
+        });
+    </script>
+
+
+
+</body></html>

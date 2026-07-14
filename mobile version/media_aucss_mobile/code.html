@@ -1,0 +1,347 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>AUCSS Media | The Binary Talk &amp; Dispatch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1e",
+                    "outline": "#926f6b",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "secondary": "#5e5e5e",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-fixed": "#d3e4fe",
+                    "outline-variant": "#e7bdb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "surface-variant": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "tertiary-container": "#65758c",
+                    "on-tertiary-container": "#fcfbff",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "on-secondary-container": "#646464",
+                    "tertiary": "#4d5c72",
+                    "on-primary-fixed-variant": "#93000f",
+                    "primary": "#b90015",
+                    "on-surface-variant": "#5d3f3c",
+                    "inverse-primary": "#ffb4ac",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-secondary-fixed-variant": "#474747",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d8dadc",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#c00017",
+                    "surface-container-high": "#e6e8ea",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "secondary-container": "#e2e2e2",
+                    "on-primary-container": "#fff9f8",
+                    "primary-fixed": "#ffdad6",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "primary-container": "#e21e26",
+                    "surface-bright": "#f7f9fb",
+                    "on-primary-fixed": "#410003",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-low": "#f2f4f6",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Geist"],
+                    "display": ["Geist"],
+                    "body": ["Inter"],
+                    "label": ["JetBrains Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-color: #f7f9fb;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Geist', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #b90015;
+        }
+
+        .active-nav-indicator {
+            position: relative;
+        }
+        .active-nav-indicator::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: currentColor;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-16 px-6 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-headline font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter text-headline-md">AUCSS</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center overflow-hidden border border-outline">
+
+</div>
+</div>
+</header>
+<main class="pt-20 pb-28 px-5 max-w-md mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-10 transition-all duration-700 opacity-100 translate-y-0">
+<p class="mono text-primary text-xs font-bold uppercase tracking-widest mb-2">Media &amp; Publications</p>
+<h1 class="text-4xl font-bold tracking-tight text-on-surface leading-none">The Core <span class="text-primary">Signals</span></h1>
+<p class="mt-4 text-secondary text-body-md leading-relaxed">Synthesized knowledge, technical deep-dives, and community stories from the Academic University Computer Science Society.</p>
+</section>
+<!-- The Binary Talk Podcast Section -->
+<section class="mb-12 transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-2xl font-semibold tracking-tight">The Binary Talk</h2>
+<p class="mono text-[10px] text-secondary uppercase tracking-wider">Weekly Podcast • S03</p>
+</div>
+<button class="text-primary mono text-xs font-bold hover:underline flex items-center gap-1">
+                    ALL EPISODES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Podcast Featured Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden mb-4 shadow-sm">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A conceptual high-tech podcast studio setup featuring professional microphones and glowing red soundproofing panels. The lighting is moody and architectural, emphasizing clean lines and a modern developer aesthetic. The image captures the essence of technical discourse within an elite academic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChDJk4ikTQMXmxvtP7S5i5YhaaeIUWO6eCD0sYr7qwr4AM2GIzAzUzOuS58gZjRpCLFAehu7x_V5AU1peA4OPumXxcdz8hzVdKFRB0ieDz1EKR5GAQBAqxWMINwK1y-2wN8iS_aVHIbMigVroE1MyUbGrj3HM8J8hAy-YnOfkQ-kPI2YRTRfiwjyF9ryWwVTbJE-_qCsc8YL9y16RqcHdv3AMUZdh0xGAYVNHHXjfVlosOGyBPo5ewpeWAO3u5xsEbloBE2-Crxwo">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center text-white">
+<div class="bg-primary px-2 py-1 rounded text-[10px] mono font-bold uppercase">Newest Episode</div>
+<span class="mono text-[10px]">42:15</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold leading-tight mb-2">EP 42: The Ethics of Large Language Models in Academia</h3>
+<p class="text-secondary text-sm mb-4 line-clamp-2">We sit down with Dr. Aris Thorne to discuss the intersection of generative AI and traditional computer science pedagogy.</p>
+<div class="flex items-center gap-3">
+<button class="bg-on-background text-white rounded-md px-4 py-2 text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span> Listen Now
+                        </button>
+<button class="w-10 h-10 border border-outline-variant rounded-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Small Episode Cards -->
+<div class="space-y-3">
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 border border-outline-variant/30">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high flex-shrink-0 flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Close-up of a vintage mechanical keyboard with red-backlit keys, captured in a high-fidelity macro style. The focus is sharp on the metal texture and the glow of the red light against a dark, minimalist desk surface. Represents the tactile side of computer science culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4dLYkSwkIB8WS804MWuqPZClg56me4Of-cOjzMC3W6SNIG57gJcVYFpqKQqXMmD_B5LqX6sXmYTK3XutHXePKnxMhaSNbN94mgFdOBU_g4aWR0NJHyAHArIVqZFkYeIIPo2OqkbT9h9LMUAFljg-KBq1LnK53Px4CYr6yuDwIlqj6YGBYUBNN67BGrYnh5HUQmsO4YW6p4jUXe8mLv3WtVLFSaowlQy62h1RS7BQspOV1xoEj6Nqohn92bOnbYNQ5l_jKqKbVL24">
+<span class="material-symbols-outlined text-primary absolute" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="flex-grow">
+<p class="mono text-[10px] text-primary font-bold">EP 41 • 38 MIN</p>
+<h4 class="text-sm font-bold leading-snug">The Rust Revolution: Memory Safety Without Sacrifice</h4>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 border border-outline-variant/30">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high flex-shrink-0 flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A futuristic visualization of network nodes and data flows, rendered in a minimalist white-and-gray aesthetic with thin red connection lines. The design is geometric and architectural, suggesting complexity through simple forms and high-contrast visuals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3wl6b5ULjeo5O7CA5TEZEfWeFhltlBjtIPL0lLuqoIkiT0ZTBPk1WK5oWfjs3ydDkEaoYe_74zd68-haRgoT9u4NKJiAqqtfPfpA3CNk_nlYYyU1PiewbQhk5sZzFcAyqbNT2neW96tcMd_086HQlivGKoQl7cH-3SMgkq50kJLW47QQvAst-DV3KhPdaUSnxxbddLFUvkTKBmTN0JfsEnYe_mPK0kn7Ej_G7bTWLPEwzBHqHiTAiQlWhannyi8RuvkPzIA3NEfo">
+<span class="material-symbols-outlined text-primary absolute" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="flex-grow">
+<p class="mono text-[10px] text-primary font-bold">EP 40 • 52 MIN</p>
+<h4 class="text-sm font-bold leading-snug">Decentralized Compute: Beyond the Hype of Web3</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- The AUCSS Dispatch Section -->
+<section class="mb-12 transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex items-center gap-3 mb-6">
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+<h2 class="text-xl font-bold mono uppercase tracking-tighter">The Dispatch</h2>
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<div class="space-y-6">
+<!-- Newsletter Article 1 -->
+<article class="group">
+<div class="mb-3 overflow-hidden rounded-xl border border-outline-variant shadow-sm">
+<img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-contrast photograph of a modern research laboratory, featuring clean white surfaces and state-of-the-art server racks. The lighting is bright and clinical, with subtle red status indicator lights providing the only pops of color. The style is professional, minimalist, and focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ-Tku8m_mtjcC0x8uvG4_azrsp-3uoSU_NAgI-l5aTGMRYIe0YmkkAvdYJZHTH-CnU3Dt0J-zCYxTYwsBW0JqZS9u-AnmhsVMqR-xV5h2eLdK7pLtEw9dAHzVOVpCL0HuioQRIhsj1zDOC4umhd7NNhF5A2YKedcglRBNB7qgZf5LbGAb5O-SM4-EpylGD3rRo-Zlb77QmAEOQ07h31XVBfyQByhKH_YMHQaI4rTDJBjUeQQSauoMIvZ9BodnU9vcwIyu2LOFB4Q">
+</div>
+<div class="px-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="mono text-[10px] bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded">RESEARCH</span>
+<span class="text-[10px] text-secondary">MARCH 14, 2024</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors mb-2">Quantum Simulation on Commodity Hardware</h3>
+<p class="text-secondary text-sm mb-3">Exploring the limits of classical architectures when modeling quantum state transitions for entry-level researchers.</p>
+<a class="inline-flex items-center text-on-background font-bold text-xs mono tracking-widest hover:text-primary transition-colors" href="#">
+                            READ ARTICLE <span class="material-symbols-outlined text-xs ml-1" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+<!-- Newsletter Article 2 -->
+<article class="group border-t border-outline-variant/30 pt-6">
+<div class="flex gap-4">
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-1">
+<span class="mono text-[10px] bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded">DEV-LOG</span>
+<span class="text-[10px] text-secondary">MARCH 08, 2024</span>
+</div>
+<h3 class="text-md font-bold leading-tight group-hover:text-primary transition-colors">Optimizing Carbon Footprint in GPU Clusters</h3>
+<p class="text-secondary text-xs mt-1 line-clamp-2">A technical report on our society's local server maintenance and green energy initiatives.</p>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A minimalist architectural shot of a sleek, white technology building at dusk. The sky is a deep, cool gray, and the interior lights cast a warm, professional glow through floor-to-ceiling windows. The composition is geometric and emphasizes the building's sharp, clean edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTuEfOekbsem-tAplIE1d4rQ1Arcdf-8G4RSBa2ic0m7WjGZz2JQnXH7igc_gRJhIKWKD63GA5clEGqz0J4gaPjn084cDMoFsp1PHK0IznmPlWNZWJPsvXO1f80Z5Kmjiia4Qf4GgszBAKG3jZb7QZ5fCbfS-xd6YW4E0uZ6KaNPiCbv6kKBGlJLLnCxIjjt78wMOIFXMCjOdmz3FIgZPwBxCfdYWo3nhLFmdQPC2IjBmEy14m4Fl7vEts61eM1yj9NqnfVzBaYmU">
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Join the Registry (Subscription) -->
+<section class="bg-on-background text-white rounded-2xl p-8 relative overflow-hidden shadow-2xl transition-all duration-700 opacity-100 translate-y-0">
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/10 rounded-full -ml-12 -mb-12 blur-2xl"></div>
+<div class="relative z-10">
+<span class="mono text-[10px] text-primary font-bold uppercase tracking-[0.2em] block mb-2">Database Access</span>
+<h2 class="text-2xl font-bold tracking-tight mb-4">Join the Registry</h2>
+<p class="text-secondary-fixed-dim text-sm mb-6 leading-relaxed">Secure your node in our communication network. Get direct access to technical whitepapers, event invites, and terminal logs.</p>
+<form class="space-y-4">
+<div class="space-y-1">
+<label class="mono text-[10px] uppercase font-bold text-outline-variant">Terminal ID (Email)</label>
+<input class="w-full bg-inverse-surface border border-outline/30 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white placeholder:text-secondary" placeholder="user@university.edu" type="email">
+</div>
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 rounded border-outline/30 bg-transparent text-primary focus:ring-primary" id="consent" type="checkbox">
+<label class="text-[10px] text-secondary-fixed-dim leading-tight" for="consent">I consent to receiving technical updates and agree to the society's digital protocol.</label>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-white font-bold py-4 rounded-md transition-all active:scale-[0.98] uppercase tracking-widest text-xs">
+                        Initialize Subscription
+                    </button>
+</form>
+</div>
+</section>
+<footer class="mt-16 text-center">
+<p class="mono text-[10px] text-secondary-fixed-dim uppercase tracking-widest">AUCSS // MEDIA_RELATIONS // 2024</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 z-50 border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label text-[10px] uppercase mt-1">Terminal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label text-[10px] uppercase mt-1">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold active-nav-indicator active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-label text-[10px] uppercase mt-1">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label text-[10px] uppercase mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the subscription form
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.textContent;
+            
+            btn.disabled = true;
+            btn.textContent = 'CONNECTING...';
+            btn.classList.add('opacity-70');
+            
+            setTimeout(() => {
+                btn.textContent = 'NODE REGISTERED';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-700');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('bg-green-700', 'opacity-70');
+                    btn.classList.add('bg-primary');
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+
+
+
+</body></html>

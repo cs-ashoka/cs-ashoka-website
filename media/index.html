@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "background": "#f7f9fb",
+                            "surface-dim": "#d8dadc",
+                            "on-secondary": "#ffffff",
+                            "error": "#ba1a1a",
+                            "on-primary-fixed": "#410003",
+                            "on-error-container": "#93000a",
+                            "surface-container-high": "#e6e8ea",
+                            "inverse-on-surface": "#eff1f3",
+                            "surface": "#f7f9fb",
+                            "error-container": "#ffdad6",
+                            "surface-tint": "#c00017",
+                            "primary-fixed": "#ffdad6",
+                            "inverse-surface": "#2d3133",
+                            "surface-container-highest": "#e0e3e5",
+                            "tertiary-fixed-dim": "#b7c8e1",
+                            "surface-bright": "#f7f9fb",
+                            "primary-fixed-dim": "#ffb4ac",
+                            "on-secondary-fixed": "#1b1b1b",
+                            "inverse-primary": "#ffb4ac",
+                            "surface-container": "#eceef0",
+                            "tertiary-container": "#65758c",
+                            "tertiary-fixed": "#d3e4fe",
+                            "on-tertiary": "#ffffff",
+                            "on-secondary-container": "#646464",
+                            "on-primary-fixed-variant": "#93000f",
+                            "on-error": "#ffffff",
+                            "on-secondary-fixed-variant": "#474747",
+                            "secondary-fixed-dim": "#c6c6c6",
+                            "secondary": "#5e5e5e",
+                            "primary-container": "#e21e26",
+                            "on-tertiary-fixed": "#0b1c30",
+                            "outline": "#926f6b",
+                            "outline-variant": "#e7bdb8",
+                            "on-tertiary-container": "#fcfbff",
+                            "on-surface-variant": "#5d3f3c",
+                            "on-background": "#191c1e",
+                            "primary": "#b90015",
+                            "surface-variant": "#e0e3e5",
+                            "secondary-fixed": "#e2e2e2",
+                            "tertiary": "#4d5c72",
+                            "on-tertiary-fixed-variant": "#38485d",
+                            "secondary-container": "#e2e2e2",
+                            "surface-container-lowest": "#ffffff",
+                            "on-surface": "#191c1e",
+                            "on-primary": "#ffffff",
+                            "surface-container-low": "#f2f4f6",
+                            "on-primary-container": "#fff9f8"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "md": "24px",
+                            "lg": "48px",
+                            "gutter": "24px",
+                            "base": "8px",
+                            "xs": "4px",
+                            "xl": "80px",
+                            "container-max": "1280px",
+                            "sm": "12px"
+                        },
+                        "fontFamily": {
+                            "caption": ["Inter"],
+                            "headline-md": ["Geist"],
+                            "label-mono": ["JetBrains Mono"],
+                            "body-lg": ["Inter"],
+                            "headline-xl": ["Geist"],
+                            "headline-lg": ["Geist"],
+                            "body-md": ["Inter"],
+                            "headline-lg-mobile": ["Geist"]
+                        },
+                        "fontSize": {
+                            "caption": ["12px", { "lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "500" }],
+                            "headline-md": ["20px", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                            "label-mono": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                            "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                            "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                            "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                            "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                            "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(185, 0, 21, 0.05), 0 8px 10px -6px rgba(185, 0, 21, 0.05);
+            border-color: #e21e26;
+        }
+        .btn-animate {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-animate:hover .material-symbols-outlined {
+            transform: translateX(4px);
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 3s infinite ease-in-out;
+        }
+
+        /* Nav Indicator */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b90015;
+            transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link-active::after {
+            width: 100%;
+        }
+
+        /* Contact Modal */
+        #contact-modal-overlay {
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #contact-modal-overlay.is-open {
+            opacity: 1;
+        }
+        #contact-modal-card {
+            transform: translateY(16px) scale(0.98);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #contact-modal-overlay.is-open #contact-modal-card {
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center">
+    <img src="../logo.png" alt="AUCSS logo" class="h-10 w-auto object-contain" />
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../index.html">Home</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../events/index.html">Events</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../projects/index.html">Projects</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../team/index.html">Team</a>
+<a class="nav-link nav-link-active font-label-mono text-label-mono text-primary dark:text-primary-fixed-dim pb-1" href="index.html">Media</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../resources/index.html">Resources</a>
+</div>
+<div class="flex items-center gap-sm md:gap-0">
+<button class="bg-on-surface text-surface px-sm sm:px-md py-sm font-label-mono text-label-mono hover:bg-primary transition-all duration-200 active:scale-95 text-[13px] sm:text-label-mono" id="open-contact-modal" type="button">
+                Contact Us</button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden w-10 h-10 ml-xs flex items-center justify-center text-on-surface dark:text-on-background active:scale-95 transition-transform" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Panel -->
+<div class="md:hidden hidden flex-col border-t border-outline-variant/30 bg-surface dark:bg-surface-dim" id="mobile-menu">
+<div class="flex flex-col px-gutter py-md gap-md">
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../index.html">Home</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../events/index.html">Events</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../projects/index.html">Projects</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../team/index.html">Team</a>
+<a class="font-label-mono text-label-mono text-primary dark:text-primary-fixed-dim" href="index.html">Media</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../resources/index.html">Resources</a>
+</div>
+</div>
+</nav>
+<main class="min-h-screen pt-20">
+<!-- Hero Section -->
+<section class="relative pt-xl pb-xl px-gutter md:px-lg overflow-hidden grid-bg">
+<div class="max-w-container-max mx-auto relative z-10 reveal">
+<div class="max-w-3xl">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em] mb-sm block">Knowledge Systems</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl mb-md leading-[1.05] tracking-tighter">AUCSS Media Hub</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                A curated nexus for computer science discourse. We bridge the gap between abstract theory and practical implementation through technical deep-dives, industry dialogues, and institutional dispatches.
+            </p>
+</div>
+</div>
+</section>
+<!-- Podcast Section: The Binary Talk -->
+<section class="py-xl px-gutter md:px-lg bg-white reveal" id="podcast-section">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-xs">The Binary Talk</h2>
+<p class="font-body-md text-secondary">A monthly deep-dive into the algorithms and architectures that shape our world.</p>
+</div>
+<a class="font-label-mono text-label-mono text-primary hover:underline flex items-center gap-xs btn-animate" href="#">
+                VIEW ALL EPISODES <span class="material-symbols-outlined text-[18px] transition-transform duration-300">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Featured Episode -->
+<div class="lg:col-span-7 hover-card bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-1000" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB8d98JF3n4jotvCNvDs7v662IvQ8eeuI1QAFtKQ-jA9fJnwk3A_ZyhlWxJioKxs_B9xsKXlWUYex6k0MrhIV9m-hPpYA-kG7UdJUUEaM1gThcbye6j4AYMcjreZ0T-7xosiilT56QjVeXxqgUdNceAWYOacxLeQuGuxMKlaRvMWIIYO3hCat4RP1KjqJgxAcGX4U2r1zcO9fsBYO3XcnBwDWA3iTWGGDiZxceBGn_TDdsGcBmPYK6ZvrLQAPIbbuTM4fVS5cDmo8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<span class="bg-primary text-white font-label-mono text-xs px-2 py-1 rounded">FEATURED</span>
+</div>
+</div>
+<div class="md:w-1/2 p-lg flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-caption text-secondary uppercase mb-sm block">Episode 42 • Oct 14, 2026</span>
+<h3 class="font-headline-md text-headline-md mb-sm group-hover:text-primary transition-colors duration-300">The Evolution of LLM Architectures</h3>
+<p class="font-body-md text-secondary line-clamp-3 mb-md">
+                                Dr. Sarah Chen discusses the transition from classic Transformer blocks to more efficient state-space models and what it means for the future of decentralized AI.
+                            </p>
+</div>
+<button class="flex items-center gap-sm bg-black text-white w-fit px-md py-sm rounded-lg hover:bg-primary transition-all duration-300 group-hover:shadow-lg btn-animate">
+<span class="material-symbols-outlined transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider">Listen Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recent Grid -->
+<div class="lg:col-span-5 grid grid-rows-2 gap-gutter">
+<!-- Episode 2 -->
+<div class="hover-card bg-white border border-outline-variant rounded-xl p-md flex gap-md items-start group cursor-pointer">
+<div class="w-20 h-20 bg-surface-container rounded-lg flex-shrink-0 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiF-bliMuUx9MgUnc-meaSF65uAo2tfQQKR9NP7hmtNuKom7Vc2tiy0P01_23nkac2AWgzu8Pn9yJSqkNKkbeNhfS_43BaLUTja9RJ05zp6J4G7BQrgmWycph8AbtHFbpuBlCDii6XgePu6bnYXauST1uVQy2n9nTsck8DcsAQN8pEKUF-EK82S5bToR-NDpuN2w92kcbUq7_JxVXhl-ir0YjQWIMOZlvyhuGHAGYwxS2WnOE0ov86IqAL74nMN-jT_Em3QJwXg0U')"></div>
+</div>
+<div class="flex-1">
+<span class="font-label-mono text-[10px] text-secondary uppercase block mb-1">Oct 01, 2024</span>
+<h4 class="font-headline-md text-body-lg font-bold mb-2 group-hover:text-primary transition-colors">Cybersecurity in the Quantum Age</h4>
+<p class="font-caption text-secondary line-clamp-2">Exploring post-quantum cryptography standards and their implementation in modern systems.</p>
+<button class="mt-md text-primary font-label-mono text-caption flex items-center gap-1 btn-animate">
+                            LISTEN <span class="material-symbols-outlined text-[14px] transition-transform duration-300">play_circle</span>
+</button>
+</div>
+</div>
+<!-- Episode 3 -->
+<div class="hover-card bg-white border border-outline-variant rounded-xl p-md flex gap-md items-start group cursor-pointer">
+<div class="w-20 h-20 bg-surface-container rounded-lg flex-shrink-0 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAg9n40HfTKb2V2SWPq-9SNngLcuzRivyHNXVxjyNdQM3H3uDdk7eivMTFRXmON5dAcVe7j9UaTOonz_ORmgRSKVrM5rqHsJojVhDHY80tWPUdY-lrI9KGm0hwzSXz7WE_uAfW7O6V4cPYRu5gwv0eE0lNDkd95-EwwhL7RJ1c3mUkh3uftcYOIRyC5sXRqABh00SH8fHtNiGzXeNzRVv-48s4iJQAqZ1GIWFHpqwqFy6BgViiM1e97sKqyOgnB97UNm8gpmHPtm2c')"></div>
+</div>
+<div class="flex-1">
+<span class="font-label-mono text-[10px] text-secondary uppercase block mb-1">Sep 18, 2024</span>
+<h4 class="font-headline-md text-body-lg font-bold mb-2 group-hover:text-primary transition-colors">Rust vs. C++: Systems Performance</h4>
+<p class="font-caption text-secondary line-clamp-2">A technical comparison of memory safety and zero-cost abstractions in performance-critical software.</p>
+<button class="mt-md text-primary font-label-mono text-caption flex items-center gap-1 btn-animate">
+                            LISTEN <span class="material-symbols-outlined text-[14px] transition-transform duration-300">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section: The AUCSS Dispatch -->
+<section class="py-xl px-gutter md:px-lg bg-surface-container-low border-y border-outline-variant reveal" id="newsletter-section">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-xl">
+<div class="md:w-1/3">
+<h2 class="font-headline-lg text-headline-lg mb-sm">The AUCSS Dispatch</h2>
+<p class="font-body-md text-secondary mb-md">
+                    Our bi-weekly technical newsletter covering research highlights, campus tech news, and curated resources for developers.
+                </p>
+<a class="inline-flex items-center gap-sm text-black font-label-mono text-label-mono group border-b-2 border-black/10 pb-1 hover:border-primary hover:text-primary transition-all duration-300 btn-animate" href="#">
+                    EXPLORE ARCHIVE 
+                    <span class="material-symbols-outlined text-[18px] transition-transform duration-300">trending_flat</span>
+</a>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Newsletter Item 1 -->
+<div class="hover-card bg-white p-lg border border-outline-variant rounded-xl flex flex-col justify-between cursor-pointer group">
+<div>
+<div class="flex justify-between items-start mb-md">
+<span class="font-label-mono text-caption text-secondary">ISSUE #84</span>
+<span class="font-label-mono text-caption bg-surface px-2 py-1 rounded">LATEST</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md group-hover:text-primary transition-colors duration-300">Formal Methods and the Quest for Bug-Free Software</h3>
+<p class="font-body-md text-secondary mb-md">An overview of TLA+ and Coq in modern distributed systems engineering.</p>
+</div>
+<span class="text-primary material-symbols-outlined self-end transition-transform duration-300 group-hover:translate-x-2">arrow_right_alt</span>
+</div>
+<!-- Newsletter Item 2 -->
+<div class="hover-card bg-white p-lg border border-outline-variant rounded-xl flex flex-col justify-between cursor-pointer group">
+<div>
+<div class="flex justify-between items-start mb-md">
+<span class="font-label-mono text-caption text-secondary">ISSUE #83</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md group-hover:text-primary transition-colors duration-300">Distributed Systems: Beyond the CAP Theorem</h3>
+<p class="font-body-md text-secondary mb-md">Exploring new consistency models and the reality of global-scale databases.</p>
+</div>
+<span class="text-primary material-symbols-outlined self-end transition-transform duration-300 group-hover:translate-x-2">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subscription Section -->
+<section class="py-xl px-gutter md:px-lg bg-white relative overflow-hidden reveal" id="registry-section">
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="max-w-2xl mx-auto text-center">
+<div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-md animate-pulse-soft">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-sm">Join the Registry</h2>
+<p class="font-body-md text-secondary mb-lg">
+                Stay updated with the latest from the AUCSS ecosystem. High signal, zero noise. Delivered to your inbox every fortnight.
+            </p>
+<form class="flex flex-col sm:flex-row gap-2 bg-surface-container-low p-2 rounded-xl border border-outline-variant focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10 transition-all duration-300">
+<input class="flex-1 bg-transparent border-none focus:ring-0 font-body-md px-md py-sm outline-none transition-all duration-300" placeholder="Enter your university email" required="" type="email"/>
+<button class="bg-black text-white px-lg py-sm rounded-lg font-label-mono text-label-mono uppercase tracking-widest hover:bg-primary transition-all duration-300 shadow-sm active:scale-95" type="submit">
+                    Subscribe
+                </button>
+</form>
+<p class="mt-md font-caption text-secondary">
+                By subscribing, you agree to our <a class="underline hover:text-primary transition-colors" href="#">Privacy Policy</a>. University domains preferred.
+            </p>
+</div>
+</div>
+<!-- Atmospheric element -->
+<div class="absolute -right-20 top-0 w-96 h-96 opacity-5 pointer-events-none select-none">
+<span class="font-label-mono text-[200px] leading-none">{"CS"}</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="w-full px-gutter md:px-lg py-xl flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-md">
+<div class="flex flex-col items-center md:items-start gap-sm">
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface">AUCSS MEDIA</span>
+<p class="font-caption text-caption text-secondary text-center md:text-left">
+                © 2026 Ashoka University Computer Science Society. All rights reserved.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-caption text-caption text-secondary hover:text-primary underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-secondary hover:text-primary underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-secondary hover:text-primary underline transition-all duration-300" href="#">Contact Us</a>
+<a class="font-caption text-caption text-secondary hover:text-primary underline transition-all duration-300" href="#">Join the Society</a>
+</div>
+<div class="flex gap-md">
+<a class="text-secondary hover:text-primary transition-all duration-300 hover:scale-110" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+<a class="text-secondary hover:text-primary transition-all duration-300 hover:scale-110" href="#"><span class="material-symbols-outlined">podcasts</span></a>
+<a class="text-secondary hover:text-primary transition-all duration-300 hover:scale-110" href="#"><span class="material-symbols-outlined">terminal</span></a>
+</div>
+</div>
+</footer>
+<script>
+    // Mobile Nav Menu
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuIcon = document.getElementById('mobile-menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuIcon.textContent = 'menu';
+    }
+
+    function toggleMobileMenu() {
+        const isOpen = mobileMenu.classList.contains('flex');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            menuIcon.textContent = 'close';
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobileMenu();
+    });
+    window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+        if (e.matches) closeMobileMenu();
+    });
+
+    // Intersection Observer for Staggered Entrance
+    const revealCallback = (entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add active class with a slight delay if multiple entries hit at once
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, index * 100);
+                // Once element is shown, no need to observe it anymore
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Form submission simulation
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        const originalText = btn.innerText;
+        btn.innerText = 'Subscribing...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+            btn.innerText = 'Success';
+            btn.classList.replace('bg-black', 'bg-green-600');
+            form.reset();
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.replace('bg-green-600', 'bg-black');
+                btn.disabled = false;
+            }, 3000);
+        }, 1500);
+    });
+</script>
+<!-- Contact Modal -->
+<div class="fixed inset-0 z-[60] hidden items-center justify-center p-3 sm:p-6 bg-on-surface/40 backdrop-blur-sm" id="contact-modal-overlay">
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl border border-outline-variant/30 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col" id="contact-modal-card">
+<div class="flex items-center justify-between px-5 sm:px-8 py-5 sm:py-6 border-b border-outline-variant/20">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-caption uppercase tracking-widest text-on-surface-variant">Contact Module / v1.0</span>
+<h2 class="font-headline-md text-headline-md font-black text-on-surface tracking-tighter uppercase">Get in Touch</h2>
+</div>
+<button aria-label="Close dialogue" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-all active:scale-95 text-secondary shrink-0" id="contact-modal-close" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-5 sm:p-8 space-y-8 overflow-y-auto">
+<form class="space-y-6" id="contact-modal-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-name">01. Name</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" id="contact-name" placeholder="Alan Turing" required type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-email">02. Email ID</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" id="contact-email" placeholder="alan.turing@ashoka.edu.in" required type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-message">03. Message</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none" id="contact-message" placeholder="Briefly describe your query or project proposal..." required rows="4"></textarea>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between pt-4 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<p class="font-body-md text-caption text-on-surface-variant">Estimated response: <span class="font-semibold text-on-surface">24-48 hours</span></p>
+</div>
+<button class="group w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-on-surface text-surface font-label-mono text-label-mono uppercase tracking-widest rounded-lg hover:bg-primary transition-all duration-300 active:scale-95" type="submit">
+                        Send Message
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="pt-8 border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row md:items-start gap-8">
+<div class="space-y-2 max-w-sm">
+<span class="font-label-mono text-caption uppercase text-primary font-bold">Direct Channels</span>
+<p class="font-body-md text-caption text-on-surface-variant leading-relaxed">
+                            For immediate technical inquiries or academic collaboration, reach out via our official university handles.
+                        </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] uppercase text-on-secondary-container">Email</span>
+<a class="font-body-md text-caption font-semibold text-on-surface hover:text-primary transition-colors" href="mailto:cs.society@ashoka.edu.in">cs.society@ashoka.edu.in</a>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">alternate_email</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] uppercase text-on-secondary-container">Social</span>
+<a class="font-body-md text-caption font-semibold text-on-surface hover:text-primary transition-colors" href="https://instagram.com/cs.ashoka" target="_blank">@cs.ashoka <span class="text-on-secondary-container/50 font-normal ml-1">on Instagram</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactBtn = document.getElementById('open-contact-modal');
+        const contactOverlay = document.getElementById('contact-modal-overlay');
+        const contactClose = document.getElementById('contact-modal-close');
+        const contactForm = document.getElementById('contact-modal-form');
+
+        if (!contactBtn || !contactOverlay || !contactClose || !contactForm) return;
+
+        function openContactModal() {
+            contactOverlay.classList.remove('hidden');
+            contactOverlay.classList.add('flex');
+            requestAnimationFrame(() => contactOverlay.classList.add('is-open'));
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            contactOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                contactOverlay.classList.add('hidden');
+                contactOverlay.classList.remove('flex');
+            }, 300);
+        }
+
+        contactBtn.addEventListener('click', openContactModal);
+        contactClose.addEventListener('click', closeContactModal);
+        contactOverlay.addEventListener('click', (e) => {
+            if (e.target === contactOverlay) closeContactModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactOverlay.classList.contains('is-open')) closeContactModal();
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = contactForm.querySelector('#contact-name').value.trim();
+            const email = contactForm.querySelector('#contact-email').value.trim();
+            const message = contactForm.querySelector('#contact-message').value.trim();
+            const recipient = 'cs.society@ashoka.edu.in';
+            const subject = encodeURIComponent(`Contact form message from ${name || 'a visitor'}`);
+            const body = encodeURIComponent(
+                `Name: ${name || 'Not provided'}\nEmail: ${email || 'Not provided'}\n\nMessage:\n${message || 'No message provided'}`
+            );
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+            contactForm.reset();
+            closeContactModal();
+        });
+    });
+</script>
+</body></html>

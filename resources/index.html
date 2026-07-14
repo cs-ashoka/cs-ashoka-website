@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resources | CS Society</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#65758c",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed": "#d3e4fe",
+                    "secondary-container": "#e2e2e2",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "surface-container": "#eceef0",
+                    "inverse-surface": "#2d3133",
+                    "on-surface": "#191c1e",
+                    "background": "#f7f9fb",
+                    "outline-variant": "#e7bdb8",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-tint": "#c00017",
+                    "on-background": "#191c1e",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-secondary-container": "#646464",
+                    "inverse-primary": "#ffb4ac",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-primary-container": "#fff9f8",
+                    "surface": "#f7f9fb",
+                    "on-surface-variant": "#5d3f3c",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed-variant": "#474747",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-variant": "#e0e3e5",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#926f6b",
+                    "on-primary-fixed": "#410003",
+                    "on-primary-fixed-variant": "#93000f",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#e21e26",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#4d5c72",
+                    "secondary": "#5e5e5e",
+                    "primary": "#b90015",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#fcfbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "xl": "80px",
+                    "lg": "48px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-xl": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "500"}],
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #ffffff;
+            color: #191c1e;
+        }
+        .resource-card-hover {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+        .resource-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.04);
+        }
+        .mono-accent { font-family: 'JetBrains Mono', monospace; }
+        .grid-bg {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Nav Indicator */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b90015;
+            transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link-active::after {
+            width: 100%;
+        }
+
+        /* Contact Modal */
+        #contact-modal-overlay {
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #contact-modal-overlay.is-open {
+            opacity: 1;
+        }
+        #contact-modal-card {
+            transform: translateY(16px) scale(0.98);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #contact-modal-overlay.is-open #contact-modal-card {
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center">
+    <img src="../logo.png" alt="AUCSS logo" class="h-10 w-auto object-contain" />
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../index.html">Home</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../events/index.html">Events</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../projects/index.html">Projects</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../team/index.html">Team</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../media/index.html">Media</a>
+<a class="nav-link nav-link-active font-label-mono text-label-mono text-primary dark:text-primary-fixed-dim pb-1" href="index.html">Resources</a>
+</div>
+<div class="flex items-center gap-sm md:gap-0">
+<button class="bg-on-surface text-surface px-sm sm:px-md py-sm font-label-mono text-label-mono hover:bg-primary transition-all duration-200 active:scale-95 text-[13px] sm:text-label-mono" id="open-contact-modal" type="button">
+                Contact Us</button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden w-10 h-10 ml-xs flex items-center justify-center text-on-surface dark:text-on-background active:scale-95 transition-transform" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Panel -->
+<div class="md:hidden hidden flex-col border-t border-outline-variant/30 bg-surface dark:bg-surface-dim" id="mobile-menu">
+<div class="flex flex-col px-gutter py-md gap-md">
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../index.html">Home</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../events/index.html">Events</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../projects/index.html">Projects</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../team/index.html">Team</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../media/index.html">Media</a>
+<a class="font-label-mono text-label-mono text-primary dark:text-primary-fixed-dim" href="index.html">Resources</a>
+</div>
+</div>
+</nav>
+<main class="min-h-screen pt-20">
+<!-- Hero Section -->
+<section class="relative py-xl px-md overflow-hidden bg-white">
+<div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="max-w-2xl reveal-on-scroll">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em] block mb-sm">Academic Core</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl mb-md">Society Resources</h1>
+<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant leading-relaxed">
+                        A centralized repository for technical study materials, governance documents, and brand assets curated by the Ashoka University Computer Science Society.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Course Related Resources (Bento Grid) -->
+<section class="py-xl px-md border-t border-secondary-container">
+<div class="max-w-container-max mx-auto">
+<div class="flex items-end justify-between mb-lg reveal-on-scroll">
+<div>
+<span class="font-label-mono text-caption text-secondary uppercase tracking-widest block mb-xs">01. Academic</span>
+<h2 class="font-headline-lg text-headline-lg">Course Related Resources</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Major Card -->
+<div class="md:col-span-8 bg-surface-container-low border border-secondary-container p-md md:p-lg flex flex-col justify-between resource-card-hover rounded-xl reveal-on-scroll">
+<div>
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 32px;">terminal</span>
+<h3 class="font-headline-md text-headline-md mb-sm">Technical Study Materials</h3>
+<p class="text-on-secondary-fixed-variant mb-md max-w-lg">Comprehensive notes for core CS courses including Data Structures, Algorithms, and Operating Systems. Peer-reviewed by high-performing seniors.</p>
+</div>
+<div class="flex flex-wrap gap-sm">
+<span class="px-sm py-xs bg-white border border-secondary-container font-label-mono text-caption rounded-full">PDF Archive</span>
+<span class="px-sm py-xs bg-white border border-secondary-container font-label-mono text-caption rounded-full">Python Core</span>
+<span class="px-sm py-xs bg-white border border-secondary-container font-label-mono text-caption rounded-full">C++ Templates</span>
+</div>
+</div>
+<!-- Side Card -->
+<div class="md:col-span-4 bg-white border border-secondary-container p-md md:p-lg flex flex-col justify-center resource-card-hover rounded-xl relative overflow-hidden reveal-on-scroll">
+<div class="absolute top-0 right-0 p-md opacity-10">
+<span class="material-symbols-outlined" style="font-size: 120px;">history_edu</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Exam Archives</h3>
+<p class="text-on-secondary-fixed-variant mb-md">Past year question papers and model solutions for semesters 2018–2023.</p>
+<a class="text-primary font-label-mono text-label-mono flex items-center group" href="#">
+                            Browse Collection
+                            <span class="material-symbols-outlined ml-xs transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<!-- Bottom Small Cards -->
+<div class="md:col-span-4 bg-white border border-secondary-container p-md resource-card-hover rounded-xl reveal-on-scroll">
+<h4 class="font-label-mono text-label-mono uppercase mb-sm">MATLAB Guides</h4>
+<p class="text-caption text-on-secondary-fixed-variant mb-md">Numerical computing essentials for Scientific Computing.</p>
+<button class="w-full py-xs border border-on-surface font-label-mono text-caption uppercase hover:bg-on-surface hover:text-white transition-colors active:scale-95 btn-fill-effect">Download</button>
+</div>
+<div class="md:col-span-4 bg-white border border-secondary-container p-md resource-card-hover rounded-xl reveal-on-scroll">
+<h4 class="font-label-mono text-label-mono uppercase mb-sm">Discrete Math Prep</h4>
+<p class="text-caption text-on-secondary-fixed-variant mb-md">Logic, set theory, and graph theory condensed cheat sheets.</p>
+<button class="w-full py-xs border border-on-surface font-label-mono text-caption uppercase hover:bg-on-surface hover:text-white transition-colors active:scale-95 btn-fill-effect">Download</button>
+</div>
+<div class="md:col-span-4 bg-white border border-secondary-container p-md resource-card-hover rounded-xl reveal-on-scroll">
+<h4 class="font-label-mono text-label-mono uppercase mb-sm">AI/ML Datasets</h4>
+<p class="text-caption text-on-secondary-fixed-variant mb-md">Cleaned local datasets for Ashoka-specific projects.</p>
+<button class="w-full py-xs border border-on-surface font-label-mono text-caption uppercase hover:bg-on-surface hover:text-white transition-colors active:scale-95 btn-fill-effect">Download</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Guiding Documents (List Layout) -->
+<section class="py-xl px-md bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="mb-lg reveal-on-scroll">
+<span class="font-label-mono text-caption text-secondary uppercase tracking-widest block mb-xs">02. Governance</span>
+<h2 class="font-headline-lg text-headline-lg">Guiding Documents</h2>
+</div>
+<div class="space-y-xs bg-white border border-secondary-container rounded-xl overflow-hidden shadow-sm">
+<!-- List Item -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm p-md border-b border-secondary-container hover:bg-surface-container transition-colors group cursor-pointer reveal-on-scroll sm:hover:translate-x-2 transition-transform">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">gavel</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-sm md:text-md">AUCSS Constitution</h4>
+<p class="text-caption text-on-secondary-fixed-variant">Last updated: Sept 2023</p>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-primary group-hover:underline">VIEW PDF</span>
+</div>
+<!-- List Item -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm p-md border-b border-secondary-container hover:bg-surface-container transition-colors group cursor-pointer reveal-on-scroll sm:hover:translate-x-2 transition-transform">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">verified_user</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-sm md:text-md">Society Code of Conduct</h4>
+<p class="text-caption text-on-secondary-fixed-variant">Ethics and inclusion guidelines</p>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-primary group-hover:underline">VIEW PDF</span>
+</div>
+<!-- List Item -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm p-md hover:bg-surface-container transition-colors group cursor-pointer reveal-on-scroll sm:hover:translate-x-2 transition-transform">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">psychology</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-sm md:text-md">Research Ethics Protocol</h4>
+<p class="text-caption text-on-secondary-fixed-variant">For undergraduate research projects</p>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-primary group-hover:underline">VIEW PDF</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Downloadables (Asset Cards) -->
+<section class="py-xl px-md border-t border-secondary-container">
+<div class="max-w-container-max mx-auto">
+<div class="mb-lg reveal-on-scroll">
+<span class="font-label-mono text-caption text-secondary uppercase tracking-widest block mb-xs">03. Assets</span>
+<h2 class="font-headline-lg text-headline-lg">Downloadables</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Brand Kit -->
+<div class="group border border-secondary-container rounded-xl overflow-hidden flex flex-col h-full bg-white reveal-on-scroll">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist brand identity sheet for a computer science society. The image shows several logo variants in black and vibrant red, displayed on a clean white background with geometric grid overlays. The aesthetic is modern, tech-focused, and academic, reflecting high-end developer tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD22vBq8f2Rvguc3MB8rdI9iXVRr2AQ6VPuIz0ongKGU31mSS_Q8WR_Xet_LsXVb-KNfQQBd96rgMEEKQGGQ2j241s7PHq_5JfEu2ZOcTtvw45J0hCEyFWDjmpBMOUnj0pn-qTgdMijduUerwnZn77nezR_c2UNZapACrPdLInsWh2ITA_4TOKBBmVCN-A8P1BtjpYDGPi94CWZS-WXoqtRHyQ6yriMcif7VGKbTcf_Pg3bXQm6bhYwlkZ_LerktfUajIUv8O5iprA"/>
+<div class="absolute inset-0 bg-on-surface/5"></div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs">Brand Kit v2.0</h3>
+<p class="text-body-md text-on-secondary-fixed-variant mb-md flex-grow">Official logos, typography guidelines, and color palettes for society use.</p>
+<button class="w-full py-sm bg-on-surface text-white font-label-mono text-label-mono uppercase hover:bg-primary transition-colors flex items-center justify-center gap-sm active:scale-95 btn-fill-effect">
+<span class="material-symbols-outlined text-sm">download</span>
+                                Download ZIP (12MB)
+                            </button>
+</div>
+</div>
+<!-- Pres Templates -->
+<div class="group border border-secondary-container rounded-xl overflow-hidden flex flex-col h-full bg-white reveal-on-scroll">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A clean slide deck presentation template on a computer screen. The design is minimal, using monochromatic tones with subtle red accents for highlights. High-contrast typography and clear layout grids suggest a professional academic environment for computer science presentations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfxClrzc6cDasERr14Yls5GHdEcSiI2PddeIW4Fp32oSGjJ0AghEatyzZ1HgO4WDj_VeJ-oH7rkcWihEA95jVR6fcw5wFzUth9ncoq_-F9Xl3niblKl660JmhHTaAkYqE2ogPlziC7HpaF8LRwZihqWNUlmSSOYY6VTCCsFAA1FtNX2-niVibTFmtdbBZCh0L6vPo3SZhRqSft-vcpPrCkV3MvSfelZCQirjOSCksPxYXFX04yan80hCcqpXCXXewva8hVFG_1Cew"/>
+<div class="absolute inset-0 bg-on-surface/5"></div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs">Presentation Templates</h3>
+<p class="text-body-md text-on-secondary-fixed-variant mb-md flex-grow">Standardized slide decks for seminars and project showcases.</p>
+<button class="w-full py-sm border border-on-surface text-on-surface font-label-mono text-label-mono uppercase hover:bg-on-surface hover:text-white transition-colors flex items-center justify-center gap-sm active:scale-95 btn-fill-effect">
+<span class="material-symbols-outlined text-sm">slideshow</span>
+                                Get Templates
+                            </button>
+</div>
+</div>
+<!-- Software Guides -->
+<div class="group border border-secondary-container rounded-xl overflow-hidden flex flex-col h-full bg-white reveal-on-scroll">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A stylized technical illustration of a software installation process. The image features abstract code blocks and icons representing Linux, macOS, and Windows environments, styled in a minimalist black and white color scheme with sharp red directional arrows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArK3mgUZeSl77uDyg5mgxs21dAVNhcHisoJCTvBHWFZ6n7kxXwnL1kRkqEziQwnJEE0m80Zrc1cqbc54vKEZ43H9KbgXBVrZn5Bemni-LJiPDvY1a0q-QAjIkWt84R_uSkwJS6fKjrZxXfOEy-YSD5IFsu2qJrlorIQ2--WGeort3cXCBn98PXaiosddX3GqmaS-RwVC3igI9CT27KLyG32Wi9m-a2AGy0KxwTqeCeMq3Qp7oRPpeifPqHOSCouPsfOvABMya-D04"/>
+<div class="absolute inset-0 bg-on-surface/5"></div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-xs">Installation Guides</h3>
+<p class="text-body-md text-on-secondary-fixed-variant mb-md flex-grow">Step-by-step documentation for setting up Linux, Docker, and IDEs.</p>
+<button class="w-full py-sm border border-on-surface text-on-surface font-label-mono text-label-mono uppercase hover:bg-on-surface hover:text-white transition-colors flex items-center justify-center gap-sm active:scale-95 btn-fill-effect">
+<span class="material-symbols-outlined text-sm">auto_fix_high</span>
+                                View Guides
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Contact -->
+<section class="py-xl px-md bg-on-surface text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 opacity-10 -mr-20 -mt-20">
+<span class="material-symbols-outlined" style="font-size: 400px;">code</span>
+</div>
+<div class="max-w-container-max mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-lg">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Missing a resource?</h2>
+<p class="text-body-lg opacity-80">We are always expanding our repository. If you have quality notes or materials to contribute, please let us know.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-md bg-primary text-white font-label-mono text-label-mono uppercase tracking-widest hover:bg-red-700 transition-colors active:scale-95 btn-fill-effect">Contribute Now</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-dim border-t border-secondary-container dark:border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-md lg:px-xl py-lg max-w-container-max mx-auto">
+<div class="mb-md md:mb-0">
+<div class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant mb-xs">CS SOCIETY</div>
+<p class="font-caption text-caption text-on-secondary-fixed-variant">© 2026 Computer Science Society. Built for the academic community.</p>
+</div>
+<div class="flex gap-md">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Discord</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+        // Mobile Nav Menu
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const menuIcon = document.getElementById('mobile-menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuIcon.textContent = 'menu';
+        }
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.contains('flex');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuIcon.textContent = 'close';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMobileMenu);
+        mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+        window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+            if (e.matches) closeMobileMenu();
+        });
+
+        // Optional micro-interaction for resource cards
+        document.querySelectorAll('.resource-card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) icon.classList.add('scale-110');
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) icon.classList.remove('scale-110');
+            });
+        });
+    </script>
+<!-- Contact Modal -->
+<div class="fixed inset-0 z-[60] hidden items-center justify-center p-3 sm:p-6 bg-on-surface/40 backdrop-blur-sm" id="contact-modal-overlay">
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl border border-outline-variant/30 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col" id="contact-modal-card">
+<div class="flex items-center justify-between px-5 sm:px-8 py-5 sm:py-6 border-b border-outline-variant/20">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-caption uppercase tracking-widest text-on-surface-variant">Contact Module / v1.0</span>
+<h2 class="font-headline-md text-headline-md font-black text-on-surface tracking-tighter uppercase">Get in Touch</h2>
+</div>
+<button aria-label="Close dialogue" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-all active:scale-95 text-secondary shrink-0" id="contact-modal-close" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-5 sm:p-8 space-y-8 overflow-y-auto">
+<form class="space-y-6" id="contact-modal-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-name">01. Name</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" id="contact-name" placeholder="Alan Turing" required type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-email">02. Email ID</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" id="contact-email" placeholder="alan.turing@ashoka.edu.in" required type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-message">03. Message</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none" id="contact-message" placeholder="Briefly describe your query or project proposal..." required rows="4"></textarea>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between pt-4 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<p class="font-body-md text-caption text-on-surface-variant">Estimated response: <span class="font-semibold text-on-surface">24-48 hours</span></p>
+</div>
+<button class="group w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-on-surface text-surface font-label-mono text-label-mono uppercase tracking-widest rounded-lg hover:bg-primary transition-all duration-300 active:scale-95" type="submit">
+                        Send Message
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="pt-8 border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row md:items-start gap-8">
+<div class="space-y-2 max-w-sm">
+<span class="font-label-mono text-caption uppercase text-primary font-bold">Direct Channels</span>
+<p class="font-body-md text-caption text-on-surface-variant leading-relaxed">
+                            For immediate technical inquiries or academic collaboration, reach out via our official university handles.
+                        </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] uppercase text-on-secondary-container">Email</span>
+<a class="font-body-md text-caption font-semibold text-on-surface hover:text-primary transition-colors" href="mailto:cs.society@ashoka.edu.in">cs.society@ashoka.edu.in</a>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">alternate_email</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] uppercase text-on-secondary-container">Social</span>
+<a class="font-body-md text-caption font-semibold text-on-surface hover:text-primary transition-colors" href="https://instagram.com/cs.ashoka" target="_blank">@cs.ashoka <span class="text-on-secondary-container/50 font-normal ml-1">on Instagram</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactBtn = document.getElementById('open-contact-modal');
+        const contactOverlay = document.getElementById('contact-modal-overlay');
+        const contactClose = document.getElementById('contact-modal-close');
+        const contactForm = document.getElementById('contact-modal-form');
+
+        if (!contactBtn || !contactOverlay || !contactClose || !contactForm) return;
+
+        function openContactModal() {
+            contactOverlay.classList.remove('hidden');
+            contactOverlay.classList.add('flex');
+            requestAnimationFrame(() => contactOverlay.classList.add('is-open'));
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            contactOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                contactOverlay.classList.add('hidden');
+                contactOverlay.classList.remove('flex');
+            }, 300);
+        }
+
+        contactBtn.addEventListener('click', openContactModal);
+        contactClose.addEventListener('click', closeContactModal);
+        contactOverlay.addEventListener('click', (e) => {
+            if (e.target === contactOverlay) closeContactModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactOverlay.classList.contains('is-open')) closeContactModal();
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = contactForm.querySelector('#contact-name').value.trim();
+            const email = contactForm.querySelector('#contact-email').value.trim();
+            const message = contactForm.querySelector('#contact-message').value.trim();
+            const recipient = 'cs.society@ashoka.edu.in';
+            const subject = encodeURIComponent(`Contact form message from ${name || 'a visitor'}`);
+            const body = encodeURIComponent(
+                `Name: ${name || 'Not provided'}\nEmail: ${email || 'Not provided'}\n\nMessage:\n${message || 'No message provided'}`
+            );
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+            contactForm.reset();
+            closeContactModal();
+        });
+    });
+</script>
+</body></html>

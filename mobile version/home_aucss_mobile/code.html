@@ -1,0 +1,254 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>AUCSS | Home</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1e",
+                    "outline": "#926f6b",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "secondary": "#5e5e5e",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-fixed": "#d3e4fe",
+                    "outline-variant": "#e7bdb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "surface-variant": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "tertiary-container": "#65758c",
+                    "on-tertiary-container": "#fcfbff",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "on-secondary-container": "#646464",
+                    "tertiary": "#4d5c72",
+                    "on-primary-fixed-variant": "#93000f",
+                    "primary": "#b90015",
+                    "on-surface-variant": "#5d3f3c",
+                    "inverse-primary": "#ffb4ac",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-secondary-fixed-variant": "#474747",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d8dadc",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#c00017",
+                    "surface-container-high": "#e6e8ea",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "secondary-container": "#e2e2e2",
+                    "on-primary-container": "#fff9f8",
+                    "primary-fixed": "#ffdad6",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Geist"],
+                    "display": ["Geist"],
+                    "body": ["Inter"],
+                    "label": ["JetBrains Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-subtle {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                              linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Geist', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-16 px-6 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary flex items-center justify-center rounded-sm">
+<span class="material-symbols-outlined text-white text-[20px]" data-icon="menu">menu</span>
+</div>
+<span class="font-headline font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter text-headline-md">AUCSS</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-5 space-y-12">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-xl bg-white border border-outline-variant p-8 shadow-sm transition-all duration-700 opacity-100 translate-y-0">
+<div class="relative z-10">
+<span class="mono text-primary text-[12px] uppercase tracking-[0.2em] mb-4 block">System Init // 2024</span>
+<h1 class="text-4xl font-bold tracking-tight text-on-background leading-tight mb-6">
+                    Innovating at the <span class="text-primary italic">Intersection</span>
+</h1>
+<p class="text-on-surface-variant text-body-md mb-8 max-w-xs">
+                    The Academic University Computer Science Society is the hub for researchers, builders, and visionaries.
+                </p>
+<div class="flex flex-col gap-3">
+<button class="bg-on-background text-white h-12 rounded-lg font-medium active:scale-95 transition-transform">
+                        Explore Codebase
+                    </button>
+<button class="flex items-center justify-center gap-2 mono text-on-background text-sm h-12 hover:opacity-80 transition-opacity">
+                        View Our Constitution <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 border-[1px] border-outline-variant rounded-full opacity-20 animate-float"></div>
+</section>
+<!-- Society Highlights (Bento-lite) -->
+<section class="space-y-6 transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex items-end justify-between px-1">
+<h2 class="text-2xl font-bold tracking-tight">Society Highlights</h2>
+<span class="mono text-[10px] text-outline pb-1">01 — 03</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Hackathon Card -->
+<div class="group relative bg-white border border-outline-variant rounded-xl overflow-hidden p-6 hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+</div>
+<span class="mono text-[10px] px-2 py-1 bg-surface-container-high rounded-full">ANNUAL</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Hackathon 2.0</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        48 hours of pure creation. Join 200+ developers to solve real-world problems through rapid prototyping.
+                    </p>
+</div>
+<!-- Research Lab Card -->
+<div class="group relative bg-white border border-outline-variant rounded-xl overflow-hidden p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="science">science</span>
+</div>
+<span class="mono text-[10px] px-2 py-1 bg-surface-container-high rounded-full">LABS</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Research Lab</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Weekly deep dives into peer-reviewed papers and ongoing faculty-led projects in ML and Quantum.
+                    </p>
+</div>
+<!-- Workshops Card -->
+<div class="group relative bg-on-background text-white rounded-xl overflow-hidden p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/20 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+</div>
+<span class="mono text-[10px] px-2 py-1 bg-white/10 rounded-full">WEEKLY</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Technical Workshops</h3>
+<p class="text-white/70 text-sm leading-relaxed">
+                        Hands-on sessions on distributed systems, kernel development, and secure coding practices.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-12 border-y border-outline-variant bg-grid-subtle -mx-5 px-10 transition-all duration-700 opacity-100 translate-y-0">
+<div class="text-center mb-10">
+<h2 class="text-2xl font-bold tracking-tight mb-2">Driven by a community of builders</h2>
+<p class="mono text-[12px] text-on-surface-variant uppercase">The network is our architecture</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="text-center">
+<div class="text-4xl font-bold text-primary mb-1">1.2k+</div>
+<div class="mono text-[10px] text-outline uppercase tracking-widest">Active Members</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-bold text-on-background mb-1">45+</div>
+<div class="mono text-[10px] text-outline uppercase tracking-widest">OSS Projects</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-bold text-on-background mb-1">12</div>
+<div class="mono text-[10px] text-outline uppercase tracking-widest">Partner Labs</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-bold text-primary mb-1">04</div>
+<div class="mono text-[10px] text-outline uppercase tracking-widest">Major Events</div>
+</div>
+</div>
+</section>
+<!-- Visual Anchor (Spacer for Nav) -->
+<div class="h-8"></div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline z-50">
+<button class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 duration-150 transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="terminal">terminal</span>
+<span class="font-label text-label-mono uppercase text-[10px]">Terminal</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 duration-150 transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-label text-label-mono uppercase text-[10px]">Events</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 duration-150 transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="folder_open">folder_open</span>
+<span class="font-label text-label-mono uppercase text-[10px]">Archive</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 duration-150 transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="font-label text-label-mono uppercase text-[10px]">Profile</span>
+</button>
+</nav>
+<!-- Simple Interaction Script -->
+<script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+
+
+
+</body></html>

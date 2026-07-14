@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Geist:wght@600;700;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#fff9f8",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "secondary": "#5e5e5e",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "tertiary": "#4d5c72",
+                    "surface-tint": "#c00017",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#ffb4ac",
+                    "outline": "#926f6b",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "surface-container": "#eceef0",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "tertiary-container": "#65758c",
+                    "on-surface": "#191c1e",
+                    "surface-bright": "#f7f9fb",
+                    "primary-container": "#e21e26",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#e7bdb8",
+                    "on-secondary-fixed-variant": "#474747",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "primary": "#b90015",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-primary-fixed-variant": "#93000f",
+                    "background": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#646464",
+                    "tertiary-fixed": "#d3e4fe",
+                    "secondary-container": "#e2e2e2",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#410003",
+                    "primary-fixed": "#ffdad6",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d8dadc",
+                    "on-background": "#191c1e",
+                    "on-tertiary-container": "#fcfbff",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "container-max": "1280px",
+                    "xl": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Geist"],
+                    "label-mono": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-xl": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #ffffff; color: #191c1e; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .grid-pattern {
+            background-image: radial-gradient(#E2E8F0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        /* Entrance Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Spotlight Pulse */
+        @keyframes pulse-glow {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(185, 0, 21, 0)); }
+            50% { filter: brightness(1.1) drop-shadow(0 0 15px rgba(185, 0, 21, 0.4)); }
+        }
+        .pulse-effect {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        /* Stagger Helper */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .reveal.active .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Project Card Hover */
+        .project-card {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -10px rgba(185, 0, 21, 0.15);
+        }
+
+        /* Collaborate Link Slide Reveal */
+        .link-slide-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        .link-slide-reveal span {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .link-slide-reveal:hover span {
+            transform: translateX(4px);
+        }
+
+        /* Filter Indicator Transition */
+        #filter-indicator {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Cursor blinking for terminal effect */
+        .terminal-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Nav Indicator */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b90015;
+            transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link-active::after {
+            width: 100%;
+        }
+
+        /* Contact Modal */
+        #contact-modal-overlay {
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #contact-modal-overlay.is-open {
+            opacity: 1;
+        }
+        #contact-modal-card {
+            transform: translateY(16px) scale(0.98);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #contact-modal-overlay.is-open #contact-modal-card {
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased" data-mode="connect">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center">
+    <img src="../logo.png" alt="AUCSS logo" class="h-10 w-auto object-contain" />
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../index.html">Home</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../events/index.html">Events</a>
+<a class="nav-link nav-link-active font-label-mono text-label-mono text-primary dark:text-primary-fixed-dim pb-1" href="index.html">Projects</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../team/index.html">Team</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../media/index.html">Media</a>
+<a class="nav-link font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-on-surface transition-colors pb-1" href="../resources/index.html">Resources</a>
+</div>
+<div class="flex items-center gap-sm md:gap-0">
+<button class="bg-on-surface text-surface px-sm sm:px-md py-sm font-label-mono text-label-mono hover:bg-primary transition-all duration-200 active:scale-95 text-[13px] sm:text-label-mono" id="open-contact-modal" type="button">
+                Contact Us</button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden w-10 h-10 ml-xs flex items-center justify-center text-on-surface dark:text-on-background active:scale-95 transition-transform" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Panel -->
+<div class="md:hidden hidden flex-col border-t border-outline-variant/30 bg-surface dark:bg-surface-dim" id="mobile-menu">
+<div class="flex flex-col px-gutter py-md gap-md">
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../index.html">Home</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../events/index.html">Events</a>
+<a class="font-label-mono text-label-mono text-primary dark:text-primary-fixed-dim" href="index.html">Projects</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../team/index.html">Team</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../media/index.html">Media</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-secondary-fixed-variant" href="../resources/index.html">Resources</a>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-xl overflow-hidden border-b border-outline-variant/30 reveal">
+<div class="absolute inset-0 grid-pattern opacity-40 -z-10"></div>
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="max-w-3xl">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em] mb-sm block stagger-item" style="transition-delay: 100ms;">Society Repository</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl mb-md stagger-item" style="transition-delay: 200ms;">Advancing the core of Ashoka's computing landscape.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl stagger-item" style="transition-delay: 300ms;">
+                        A curated collection of student-led initiatives, open-source tools, and research explorations built by members of the Ashoka University Computer Science Society.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Project Filter/Search Bar -->
+<section class="bg-surface-container-lowest sticky top-20 z-40 border-b border-outline-variant/30">
+<div class="px-gutter max-w-container-max mx-auto py-sm flex flex-col md:flex-row justify-between items-center gap-sm relative">
+<div class="flex gap-sm overflow-x-auto w-full md:w-auto pb-xs md:pb-0 relative" id="filter-container">
+<span class="filter-tab active relative z-10 bg-on-surface text-on-primary px-sm py-xs font-label-mono text-label-mono cursor-pointer transition-colors duration-300">All_Projects</span>
+<span class="filter-tab relative z-10 bg-surface-container text-on-surface-variant px-sm py-xs font-label-mono text-label-mono hover:bg-surface-container-high transition-colors cursor-pointer duration-300">Web_Systems</span>
+<span class="filter-tab relative z-10 bg-surface-container text-on-surface-variant px-sm py-xs font-label-mono text-label-mono hover:bg-surface-container-high transition-colors cursor-pointer duration-300">AI_Research</span>
+<span class="filter-tab relative z-10 bg-surface-container text-on-surface-variant px-sm py-xs font-label-mono text-label-mono hover:bg-surface-container-high transition-colors cursor-pointer duration-300">Open_Source</span>
+<!-- Indicator -->
+<div class="absolute h-full top-0 bg-on-surface pointer-events-none" id="filter-indicator" style="display:none;"></div>
+</div>
+<div class="relative w-full md:w-80 group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-xl pr-md py-xs bg-surface-bright border border-outline-variant/30 font-label-mono text-label-mono focus:border-on-surface focus:ring-0 outline-none transition-all duration-300" id="search-input" placeholder="" type="text"/>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-xl px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Project Card 1 -->
+<div class="project-card reveal group bg-surface-container-lowest border border-outline-variant/30 p-md flex flex-col h-full hover:border-primary">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]">folder_open</span>
+<div class="flex gap-xs">
+<span class="bg-surface-container text-on-secondary-fixed-variant px-xs py-[2px] font-label-mono text-[10px]">STABLE</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">star</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs group-hover:text-primary transition-colors duration-300">OpenSource Ashoka</h3>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-[11px] text-secondary tracking-tighter">React / TypeScript / Node.js</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-xl flex-grow">
+                        A centralized platform for fostering collaborative development across campus departments. Standardizing library management and student resource access.
+                    </p>
+<div class="pt-md border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-label-mono text-caption text-on-surface-variant typing-version" data-version="v2.4.0"></span>
+<button class="flex items-center gap-xs font-label-mono text-label-mono text-primary group/btn link-slide-reveal">
+<span>Collaborate</span> <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="project-card reveal group bg-surface-container-lowest border border-outline-variant/30 p-md flex flex-col h-full hover:border-primary">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]">neurology</span>
+<div class="flex gap-xs">
+<span class="bg-surface-container text-on-secondary-fixed-variant px-xs py-[2px] font-label-mono text-[10px]">ALPHA</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs group-hover:text-primary transition-colors duration-300">Cognitive Link</h3>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-[11px] text-secondary tracking-tighter">Python / PyTorch / Fast API</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-xl flex-grow">
+                        Research initiative focused on fine-tuning large language models for specialized academic discourse within the Ashoka Liberal Arts environment.
+                    </p>
+<div class="pt-md border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-label-mono text-caption text-on-surface-variant typing-version" data-version="v0.1.2-dev"></span>
+<button class="flex items-center gap-xs font-label-mono text-label-mono text-primary group/btn link-slide-reveal">
+<span>Collaborate</span> <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="project-card reveal group bg-surface-container-lowest border border-outline-variant/30 p-md flex flex-col h-full hover:border-primary">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]">database</span>
+<div class="flex gap-xs">
+<span class="bg-surface-container text-on-secondary-fixed-variant px-xs py-[2px] font-label-mono text-[10px]">ACTIVE</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs group-hover:text-primary transition-colors duration-300">Ashoka Ledger</h3>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-[11px] text-secondary tracking-tighter">Go / PostgreSQL / Docker</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-xl flex-grow">
+                        A high-concurrency backend service for tracking society-wide assets and transaction histories with immutable audit trails.
+                    </p>
+<div class="pt-md border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-label-mono text-caption text-on-surface-variant typing-version" data-version="v1.1.0"></span>
+<button class="flex items-center gap-xs font-label-mono text-label-mono text-primary group/btn link-slide-reveal">
+<span>Collaborate</span> <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="project-card reveal group bg-surface-container-lowest border border-outline-variant/30 p-md flex flex-col h-full hover:border-primary">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]">terminal</span>
+<div class="flex gap-xs">
+<span class="bg-surface-container text-on-secondary-fixed-variant px-xs py-[2px] font-label-mono text-[10px]">BETA</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs group-hover:text-primary transition-colors duration-300">CLI-Toolkit</h3>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-[11px] text-secondary tracking-tighter">Rust / Shell</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-xl flex-grow">
+                        Essential developer utilities for the Ashoka student community. Automates environment setup for CS courses and simplifies Git workflows.
+                    </p>
+<div class="pt-md border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-label-mono text-caption text-on-surface-variant typing-version" data-version="v0.8.5"></span>
+<button class="flex items-center gap-xs font-label-mono text-label-mono text-primary group/btn link-slide-reveal">
+<span>Collaborate</span> <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Image Feature Card (Asymmetric Layout) -->
+<div class="lg:col-span-2 project-card reveal group relative overflow-hidden bg-on-surface min-h-[300px] border border-outline-variant/30 flex flex-col md:flex-row">
+<div class="md:w-1/2 p-md flex flex-col justify-center relative z-10">
+<span class="font-label-mono text-[10px] text-on-primary/60 uppercase mb-xs stagger-item" style="transition-delay: 100ms;">Spotlight Project</span>
+<h3 class="font-headline-lg text-on-primary mb-md stagger-item" style="transition-delay: 200ms;">The Neural Mesh</h3>
+<p class="font-body-md text-on-primary/70 mb-md stagger-item" style="transition-delay: 300ms;">A distributed computing grid utilizing idle lab machines for high-throughput bioinformatics processing.</p>
+<div class="flex gap-sm stagger-item" style="transition-delay: 400ms;">
+<button class="bg-primary text-on-primary px-md py-xs font-label-mono text-label-mono hover:bg-primary-container transition-all duration-300 shadow-sm hover:shadow-lg">View Docs</button>
+<button class="border border-on-primary/20 text-on-primary px-md py-xs font-label-mono text-label-mono hover:bg-on-primary/10 transition-all duration-300">Collaborate</button>
+</div>
+</div>
+<div class="md:w-1/2 relative h-48 md:h-auto overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-1000 pulse-effect" data-alt="A sophisticated abstract technological background featuring glowing green and red circuitry lines against a dark obsidian surface. The lighting is low-key with sharp focal points that highlight the complexity of the digital network. The image evokes a sense of high-performance computing and secure data processing architectures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB63f9ul98ldLQzqSSWjffpNAELdXNgmkhTvLCz1WDTv1ptptLANEox33OjS-ECpMhExCsQ_1mQwYhmfDcSAYo2iCB6555p-YIlrzmepxo-TSqyUInYM6_KeskyxB96a8PEpMu0KfWynCUfFSH2HpB8a-KweMPTvrnKFpP1CuFdKcMUpE_VX5oFOFXkhnj4TRdCDadbuDZHvXfSqXLW7kmI_y0REPRLWxT68HWrB365iYRWQB7QYGTTDiXUZXFqjNfgX8dmLwNSTso"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-40"></div>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="project-card reveal group bg-surface-container-lowest border border-outline-variant/30 p-md flex flex-col h-full hover:border-primary">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]">auto_stories</span>
+<div class="flex gap-xs">
+<span class="bg-surface-container text-on-secondary-fixed-variant px-xs py-[2px] font-label-mono text-[10px]">ARCHIVED</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs group-hover:text-primary transition-colors duration-300">CourseMap v1</h3>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-[11px] text-secondary tracking-tighter">PHP / jQuery / MySQL</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-xl flex-grow">
+                        The original curriculum visualization tool. Maintained as a legacy reference for data structure implementation in student portals.
+                    </p>
+<div class="pt-md border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-label-mono text-caption text-on-surface-variant typing-version" data-version="v0.0.1"></span>
+<button class="flex items-center gap-xs font-label-mono text-label-mono text-primary group/btn link-slide-reveal">
+<span>Collaborate</span> <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl bg-surface-bright border-t border-outline-variant/30 reveal">
+<div class="px-gutter max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-md stagger-item" style="transition-delay: 100ms;">Have a project idea?</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl mx-auto mb-lg stagger-item" style="transition-delay: 200ms;">
+                    We provide the infrastructure, mentorship, and community needed to bring technical visions to life.
+                </p>
+<button class="bg-on-surface text-on-primary px-xl py-md font-label-mono text-label-mono uppercase tracking-[0.2em] hover:bg-primary transition-all duration-500 shadow-md hover:shadow-xl stagger-item" style="transition-delay: 300ms;">
+                    Submit_Proposal
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-bright border-t border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-gutter py-lg max-w-container-max mx-auto gap-md">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<div class="flex items-center">
+    <img src="../logo.png" alt="AUCSS logo" class="h-10 w-auto object-contain" />
+</div>
+<p class="font-body-md text-body-md text-secondary text-center md:text-left">© 2026 Ashoka University Computer Science Society. Built for the academic core.</p>
+</div>
+<div class="flex gap-md">
+<a class="font-label-mono text-label-mono text-secondary hover:text-primary transition-all duration-300" href="#">Instagram</a>
+<a class="font-label-mono text-label-mono text-secondary hover:text-primary transition-all duration-300" href="#">GitHub</a>
+<a class="font-label-mono text-label-mono text-secondary hover:text-primary transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-label-mono text-label-mono text-secondary hover:text-primary transition-all duration-300" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script>
+    // 0. Mobile Nav Menu
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuIcon = document.getElementById('mobile-menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuIcon.textContent = 'menu';
+    }
+
+    function toggleMobileMenu() {
+        const isOpen = mobileMenu.classList.contains('flex');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            menuIcon.textContent = 'close';
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobileMenu();
+    });
+    window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+        if (e.matches) closeMobileMenu();
+    });
+
+    // 1. Entrance Animations with IntersectionObserver
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add stagger effect based on index in viewport
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, index * 100);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // 2. Terminal Typing Effects
+    function typeEffect(element, text, speed = 80) {
+        let i = 0;
+        element.innerHTML = '';
+        element.classList.add('terminal-cursor');
+        
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed + Math.random() * 50);
+            } else {
+                setTimeout(() => element.classList.remove('terminal-cursor'), 2000);
+            }
+        }
+        type();
+    }
+
+    // Typing for search placeholder
+    const searchInput = document.getElementById('search-input');
+    const placeholderText = 'SEARCH_BY_TECH_STACK...';
+    let pIdx = 0;
+    function typePlaceholder() {
+        if (pIdx <= placeholderText.length) {
+            searchInput.placeholder = placeholderText.slice(0, pIdx);
+            pIdx++;
+            setTimeout(typePlaceholder, 100);
+        }
+    }
+    setTimeout(typePlaceholder, 1000);
+
+    // Typing for version numbers when visible
+    const versionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const ver = target.getAttribute('data-version');
+                typeEffect(target, ver);
+                versionObserver.unobserve(target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.typing-version').forEach(el => versionObserver.observe(el));
+
+    // 3. Filter Tabs Interaction
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const indicator = document.getElementById('filter-indicator');
+    
+    function updateFilterState(activeTab) {
+        filterTabs.forEach(tab => {
+            tab.classList.remove('bg-on-surface', 'text-on-primary', 'active');
+            tab.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        
+        activeTab.classList.add('bg-on-surface', 'text-on-primary', 'active');
+        activeTab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    }
+
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            updateFilterState(tab);
+        });
+    });
+
+    // 4. Smooth scroll & subtle interactions
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<!-- Contact Modal -->
+<div class="fixed inset-0 z-[60] hidden items-center justify-center p-3 sm:p-6 bg-on-surface/40 backdrop-blur-sm" id="contact-modal-overlay">
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl border border-outline-variant/30 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col" id="contact-modal-card">
+<div class="flex items-center justify-between px-5 sm:px-8 py-5 sm:py-6 border-b border-outline-variant/20">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-caption uppercase tracking-widest text-on-surface-variant">Contact Module / v1.0</span>
+<h2 class="font-headline-md text-headline-md font-black text-on-surface tracking-tighter uppercase">Get in Touch</h2>
+</div>
+<button aria-label="Close dialogue" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-all active:scale-95 text-secondary shrink-0" id="contact-modal-close" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-5 sm:p-8 space-y-8 overflow-y-auto">
+<form class="space-y-6" id="contact-modal-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-name">01. Name</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" id="contact-name" placeholder="Alan Turing" required type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-email">02. Email ID</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" id="contact-email" placeholder="alan.turing@ashoka.edu.in" required type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-caption text-on-surface-variant uppercase tracking-wider" for="contact-message">03. Message</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none" id="contact-message" placeholder="Briefly describe your query or project proposal..." required rows="4"></textarea>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between pt-4 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<p class="font-body-md text-caption text-on-surface-variant">Estimated response: <span class="font-semibold text-on-surface">24-48 hours</span></p>
+</div>
+<button class="group w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-on-surface text-surface font-label-mono text-label-mono uppercase tracking-widest rounded-lg hover:bg-primary transition-all duration-300 active:scale-95" type="submit">
+                        Send Message
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="pt-8 border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row md:items-start gap-8">
+<div class="space-y-2 max-w-sm">
+<span class="font-label-mono text-caption uppercase text-primary font-bold">Direct Channels</span>
+<p class="font-body-md text-caption text-on-surface-variant leading-relaxed">
+                            For immediate technical inquiries or academic collaboration, reach out via our official university handles.
+                        </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] uppercase text-on-secondary-container">Email</span>
+<a class="font-body-md text-caption font-semibold text-on-surface hover:text-primary transition-colors" href="mailto:cs.society@ashoka.edu.in">cs.society@ashoka.edu.in</a>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">alternate_email</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] uppercase text-on-secondary-container">Social</span>
+<a class="font-body-md text-caption font-semibold text-on-surface hover:text-primary transition-colors" href="https://instagram.com/cs.ashoka" target="_blank">@cs.ashoka <span class="text-on-secondary-container/50 font-normal ml-1">on Instagram</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactBtn = document.getElementById('open-contact-modal');
+        const contactOverlay = document.getElementById('contact-modal-overlay');
+        const contactClose = document.getElementById('contact-modal-close');
+        const contactForm = document.getElementById('contact-modal-form');
+
+        if (!contactBtn || !contactOverlay || !contactClose || !contactForm) return;
+
+        function openContactModal() {
+            contactOverlay.classList.remove('hidden');
+            contactOverlay.classList.add('flex');
+            requestAnimationFrame(() => contactOverlay.classList.add('is-open'));
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            contactOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                contactOverlay.classList.add('hidden');
+                contactOverlay.classList.remove('flex');
+            }, 300);
+        }
+
+        contactBtn.addEventListener('click', openContactModal);
+        contactClose.addEventListener('click', closeContactModal);
+        contactOverlay.addEventListener('click', (e) => {
+            if (e.target === contactOverlay) closeContactModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactOverlay.classList.contains('is-open')) closeContactModal();
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = contactForm.querySelector('#contact-name').value.trim();
+            const email = contactForm.querySelector('#contact-email').value.trim();
+            const message = contactForm.querySelector('#contact-message').value.trim();
+            const recipient = 'cs.society@ashoka.edu.in';
+            const subject = encodeURIComponent(`Contact form message from ${name || 'a visitor'}`);
+            const body = encodeURIComponent(
+                `Name: ${name || 'Not provided'}\nEmail: ${email || 'Not provided'}\n\nMessage:\n${message || 'No message provided'}`
+            );
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+            contactForm.reset();
+            closeContactModal();
+        });
+    });
+</script>
+</body></html>
