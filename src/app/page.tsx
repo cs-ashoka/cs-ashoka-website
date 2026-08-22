@@ -137,7 +137,7 @@ export default function Home() {
 
       {/* Join CTA */}
       <section className="py-24 px-6 bg-on-surface text-white text-center">
-        <h2 className="text-3xl font-semibold mb-3">Wanna be a part of the Soc?</h2>
+        <h2 className="text-3xl font-semibold mb-3">Interested in joining the Society?</h2>
         <p className="text-white/70 mb-8 max-w-md mx-auto">
           Inductions open every semester. No prior experience required, just curiosity.
         </p>
