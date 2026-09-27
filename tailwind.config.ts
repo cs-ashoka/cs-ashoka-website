@@ -18,6 +18,7 @@ const config: Config = {
         'surface-container-low': '#f2f4f6',
         'on-surface': '#191c1e',
         'on-surface-variant': '#5d3f3c',
+        tertiary: '#4d5c72',
         border: '#e2e2e2',
       },
       fontFamily: {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"; 
 import "../app/globals.css"; 
-import { inter } from "@/utils/fonts";
+import { inter, jetbrainsMono } from "@/utils/fonts";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer";
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`h-full`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full`}>
       <body className={`${inter.className} bg-background h-full background-div`}>
         {/* <div className={`text-text px-4 sm:px-8 md:px-12 lg:px-16`}> */}
         <div className={`text-text h-full w-full`}>

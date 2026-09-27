@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CS Society | Join the team</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "outline": "#926f6b",
+                        "secondary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-primary-fixed": "#410003",
+                        "background": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary": "#4d5c72",
+                        "primary": "#b90015",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#5d3f3c",
+                        "on-secondary-container": "#646464",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "secondary": "#5e5e5e",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-container": "#fcfbff",
+                        "outline-variant": "#e7bdb8",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#93000f",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "primary-fixed": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb4ac",
+                        "inverse-on-surface": "#eff1f3",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-tint": "#c00017",
+                        "surface": "#f7f9fb",
+                        "tertiary-container": "#65758c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#e21e26",
+                        "on-primary-container": "#fff9f8",
+                        "tertiary-fixed": "#d3e4fe",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-surface": "#2d3133",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "label-mono": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #191c1e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-glow-hover:hover {
+            text-shadow: 0 0 8px rgba(185, 0, 21, 0.3);
+        }
+
+        .grid-pattern {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up-dim {
+            animation: fadeInUpDim 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUpDim {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 0.4;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md overflow-x-hidden">
+    <!-- Top Navigation Bar -->
+    <header
+        class="fixed top-0 w-full bg-surface-container-lowest dark:bg-on-surface border-b border-outline-variant dark:border-outline z-50 flex justify-between items-center px-md py-sm">
+        <div class="flex items-center gap-xs">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed"
+                style="font-variation-settings: 'FILL' 1;">terminal</span>
+            <span
+                class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-surface-container-lowest uppercase">CS
+                Society</span>
+        </div>
+        <button class="material-symbols-outlined text-on-surface cursor-pointer">menu</button>
+    </header>
+    <main class="pt-[80px] min-h-screen grid-pattern">
+        <!-- Hero Section -->
+        <section class="px-md py-lg flex flex-col gap-base bg-white">
+            <div
+                class="inline-block px-sm py-xs bg-surface-container-low border border-outline-variant rounded-full w-fit">
+                <span class="font-label-mono text-caption uppercase tracking-widest text-primary">Inductions
+                    2026-27</span>
+            </div>
+            <h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight tracking-tighter">
+                Join the <span class="text-primary italic">Team</span>
+            </h1>
+        </section>
+        <!-- Form Cards Container -->
+        <section class="px-md pb-xl flex flex-col gap-gutter">
+            <!-- Technical Team Card -->
+            <article
+                class="bg-white border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-sm hover:border-gray-400 transition-all duration-300 group fade-in-up-dim"
+                style="animation-delay: 0.1s;">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight">
+                        Development Vertical    </h3>
+                    <span
+                        class="material-symbols-outlined text-outline group-hover:text-gray-500 transition-colors">code</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                   Drive technical initiatives and work with your team to make tools, platforms, and any projects that you want. 
+
+                </p>
+                <div class="pt-sm border-t border-outline-variant">
+                    <a class="font-label-mono text-label-mono text-on-surface hover:text-gray-500 transition-colors flex items-center gap-xs group-hover:translate-x-1 transition-transform"
+                        href="https://app.youform.com/forms/iimlmldz">
+                        Apply Now <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Director of Events Card -->
+            <article
+                class="bg-white border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-sm hover:border-primary transition-all duration-300 group fade-in-up"
+                style="animation-delay: 0.2s;">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight">Events Vertical
+                        </h3>
+                    <span
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">event</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Plan and execute society events, workshops, competitions, and more. <redacted> 
+                </p>
+                <div class="pt-sm border-t border-outline-variant">
+                    <a class="font-label-mono text-label-mono text-on-surface hover:text-primary transition-colors flex items-center gap-xs group-hover:translate-x-1 transition-transform"
+                        href="https://app.youform.com/forms/za25gbgn">
+                        Apply Now <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Director of Broadcast Card -->
+            <article
+                class="bg-white border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-sm hover:border-primary transition-all duration-300 group fade-in-up"
+                style="animation-delay: 0.3s;">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight">
+                        Broadcast Vertical</h3>
+                    <span
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">podcasts</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Interact with industry leaders and lead content creation through our podcast and newsletter.
+                </p>
+                <div class="pt-sm border-t border-outline-variant">
+                    <a class="font-label-mono text-label-mono text-on-surface hover:text-primary transition-colors flex items-center gap-xs group-hover:translate-x-1 transition-transform"
+                        href="https://app.youform.com/forms/bkzc9dyy">
+                        Apply Now <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Director of Marketing Card -->
+            <article
+                class="bg-white border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-sm hover:border-primary transition-all duration-300 group fade-in-up"
+                style="animation-delay: 0.4s;">
+                <div class="flex justify-between items-start">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight">
+                        Marketing Vertical</h3>
+                    <span
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">campaign</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Shape the Society’s voice, outreach, branding, and audience engagement.
+                </p>
+                <div class="pt-sm border-t border-outline-variant">
+                    <a class="font-label-mono text-label-mono text-on-surface hover:text-primary transition-colors flex items-center gap-xs group-hover:translate-x-1 transition-transform"
+                        href="https://app.youform.com/forms/txmcssix">
+                        Apply Now <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+                       
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-lg bg-surface-container-lowest border-t border-outline-variant flex flex-col items-center gap-base px-md">
+        <div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tighter uppercase mb-sm">CS
+            Society
+        </div>
+
+        <p class="font-label-mono text-caption text-secondary">© 2026 CS Society. All rights reserved.</p>
+        <!-- Bottom Floating Indicator (App-like feel) -->
+        <div class="w-24 h-1 bg-outline-variant rounded-full mt-lg"></div>
+    </footer>
+    <!-- Interaction Script -->
+    <script>
+        document.querySelectorAll('article').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.add('scale-[0.98]');
+                setTimeout(() => card.classList.remove('scale-[0.98]'), 100);
+            });
+        });
+
+        // Subtle parallax or scroll reveal effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('h1');
+            hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+        });
+    </script>
+</body>
+
+</html>

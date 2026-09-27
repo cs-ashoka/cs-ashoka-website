@@ -3,7 +3,6 @@ import React from 'react';
 import { bayon } from "@/utils/fonts";
 import { poppins } from "@/utils/fonts";
 import Image from "next/image";
-import HeroImage from "../../../public/img/aboutbg.png";
 import Countdown from "../../components/countdown/counter";
 import EventCard from '@/components/cards/event-card';
 import { getSortedPostsData } from '@/lib/event-posts';
@@ -14,18 +13,7 @@ const EventsPage = () => {
   const eventPosts = getSortedPostsData();
   return (
     <main className={`w-full h-fit max-md:mt-[4vh] overflow-x-hidden`}>
-      <div className="-z-10 bottom-0 absolute w-full h-[86.5vh] overflow-hidden">
-        <span className="block w-full h-full relative overflow-hidden">
-          <Image
-            src={HeroImage}
-            priority
-            placeholder="blur"
-            alt="Person coding"
-            fill={true}
-            quality={100}
-            className="object-cover object-bottom w-full h-full" />
-        </span>
-      </div>
+      
       <div className={`w-full mx-auto grid grid-rows-2 grid-flow-col`}>
         <div className={`w-full mx-auto mt-[4vh] md:mt-[0vh]`}>
           <p
